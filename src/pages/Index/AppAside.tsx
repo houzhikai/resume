@@ -12,7 +12,7 @@ const DIV = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 0;
+    padding: 16px 0;
     border-bottom: 1px solid #666;
 `
 const Title = styled.span`
@@ -30,7 +30,7 @@ const AppAside = (props: AppAsideProps) => {
     const { menuToggle, menu } = props;
 
     return (
-        <Sider style={{ height: '100vh' }} collapsed={menuToggle}>
+        <Sider style={{ minHeight: '100vh' }} collapsed={menuToggle}>
             <DIV >
                 <Typography.Link rel='noopener noreferrer' href='https://github.com/houzhikai/resume' target='_blank'>
                     <CloudSyncOutlined style={{ fontSize: '2.6rem', color: '#fff', verticalAlign: 'middle' }} />

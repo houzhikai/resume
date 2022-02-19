@@ -3,6 +3,9 @@ import { Route } from 'react-router-dom'
 import { Layout, BackTop } from 'antd'
 import menu from './menu'
 import AppAside from './AppAside'
+import AppHeader from './AppHeader'
+import AppFooter from './AppFooter'
+
 const { Content } = Layout
 
 const Index: React.FC = () => {
@@ -24,6 +27,12 @@ const Index: React.FC = () => {
             {/* 回到顶部 */}
             <BackTop />
             <AppAside menuToggle={state.menuToggle} menu={menu} />
+            <Layout style={{ display: 'flex', height: '100vh', flexDirection: 'column' }}>
+                <AppHeader menuToggle={state.menuToggle} />
+                <Content style={{ flex: 1, overflowY: 'auto', padding: 20 }}>
+                </Content>
+                <AppFooter />
+            </Layout>
         </Layout>
     )
 }
