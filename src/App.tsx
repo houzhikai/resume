@@ -3,33 +3,26 @@ import {
     HashRouter as Router,
     Switch,
     Route,
+    Redirect,
 } from "react-router-dom";
-import {Home} from './pages/Home'
-import {NoMatch} from './pages/NoMatch'
-import {User} from './pages/User'
-import {About} from './pages/About'
+import Index from './pages/Index'
+import { NoMatch } from './pages/Index/NoMatch'
 import styled from 'styled-components'
-import {Layout} from './components/Layout'
 
-
-//所有的字的默认颜色是 #333
-const AppWrapper = styled.div`
-  color: #333;
-`
+// const AppWrapper = styled.div`
+//   color: white;
+// `
 function App() {
   return (
-      <AppWrapper>
+    //   <AppWrapper>
           <Router>
               <Switch>
-
-                  <Route exact path="/" component={Home} />
-                  <Route exact path="*" component={NoMatch} />
-                  {/*<Route exact path="/about" component={About} />*/}
-                  {/*<Route exact path="/users" component={User} />*/}
-              </Switch>
-              {/*<Layout />*/}
+              <Route component={Index} />
+              <Route exact path="/" render={() => <Redirect to="/index" />} />
+              <Route exact path="*" component={NoMatch} />
+          </Switch>
           </Router>
-      </AppWrapper>
+    //   </AppWrapper>
 
   );
 }

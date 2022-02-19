@@ -11,5 +11,5 @@ const NoMatch: React.FC = () => {
         />
     )
 }
-export {NoMatch}
+export { NoMatch }
 
