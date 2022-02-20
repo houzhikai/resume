@@ -7,13 +7,15 @@ import {
 } from "react-router-dom";
 import Index from './pages/Index'
 import { NoMatch } from './pages/Index/NoMatch'
+import './style/base.scss'
+import './style/App.scss'
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route component={Index} />
-        <Route exact path="/" render={() => <Redirect to="/index" />} />
+        <Route exact path="/" render={() => <Redirect to="/" />} />
         <Route exact path="*" component={NoMatch} />
       </Switch>
     </Router>

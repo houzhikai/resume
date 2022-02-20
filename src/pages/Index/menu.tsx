@@ -16,7 +16,7 @@ const menu = [
         ]
     },
     {
-        title: 'c测试',
+        title: '测试',
         key: '/test',
         icon: 'icon-appstore',
         auth: [1],

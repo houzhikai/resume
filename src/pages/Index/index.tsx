@@ -1,11 +1,12 @@
 import React, { useState, useReducer } from 'react'
 import { Route, Switch, Redirect, useHistory } from 'react-router-dom'
-import { Layout } from 'antd'
+import { Breadcrumb, Layout } from 'antd'
 import menus from './menu'
 import routes from '../../routes'
 import AppAside from './AppAside'
 import AppHeader from './AppHeader'
 import AppFooter from './AppFooter'
+import '../../style/layout.scss'
 
 const { Content } = Layout
 
