@@ -16,19 +16,18 @@ const menu = [
         ]
     },
     {
-        title: '测试',
-        key: '/test',
-        icon: 'icon-appstore',
+        title: '表单',
+        key: '/form',
+        icon: 'icon-form_favor_light',
         auth: [1],
         subs: [
-            { title: '按钮', key: '/test/button', icon: '' },
-            { title: '图标', key: '/test/icon', icon: '' }
+            { title: 'form切换', key: '/form/tab', icon: '' }
         ]
     },
     {
-        title: '关于',
+        title: '关于我们',
         key: '/about',
-        icon: 'user',
+        icon: 'icon-guanyuwomen',
         auth: [1]
     }
 ]

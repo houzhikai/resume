@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Layout, Row, Col, Button, Divider } from 'antd'
 import CustomBreadcrumb from '../../../components/BreadCrumbs'
+import UseIntroduce from '../../../components/UseIntroduce'
 import '../../../style/view-style/button.scss'
 import IconFont from '../../../components/IconFont'
 
@@ -11,12 +12,8 @@ const ButtonView = () => {
     const [iconLoading, setIconLoading] = useState(false)
     return (
         <Layout className='button animated fadeIn'>
-                <CustomBreadcrumb arr={['通用', '按钮']} />
-            <div className='base-style'>
-                <h3>何时使用</h3>
-                <Divider />
-                <p>标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。</p>
-            </div>
+            <CustomBreadcrumb arr={['通用', '按钮']} />
+            <UseIntroduce describe ="标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。"/>
             <div>
                 <Row gutter={8}>
                     <Col span={12}>

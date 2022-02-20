@@ -7,7 +7,7 @@ const BreadCrumbs = (props: any) => {
   return (
     <Breadcrumb style={{ marginBottom: 16 }}>
       <Breadcrumb.Item>
-        <Link to='/'>首页</Link>
+        首页
       </Breadcrumb.Item>
       {
         props?.arr?.map((res: any) => {
