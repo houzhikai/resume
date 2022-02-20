@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Menu, Dropdown, Layout, Avatar, Badge, Typography } from 'antd'
-import IconFont from '../../createFromIconfont/IconFont'
+import IconFont from '../../components/IconFont'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -22,12 +22,15 @@ const MenuItem = styled.span`
 `
 
 const AppHeader = (props: any) => {
-  let { menuClick, avatar, menuToggle, loginOut } = props;
+  let { menuClick, avatar, menuToggle } = props;
+  const handleClick = () => {
+    console.log(111)
+  }
   const menu = (
     <Menu>
       <Menu.ItemGroup title='用户设置'>
         <Menu.Divider />
-        <Menu.Item>
+        <Menu.Item onClick={handleClick}>
           <IconFont type='icon-edit' />
           <MenuItem>个人设置</MenuItem>
         </Menu.Item>

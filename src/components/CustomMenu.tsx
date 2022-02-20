@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Menu, } from 'antd';
 import { Link } from 'react-router-dom';
-import IconFont from '../createFromIconfont/IconFont';
+import IconFont from './IconFont';
 
 const getOpenKeys = (data: any) => {
     let newStr = '';
