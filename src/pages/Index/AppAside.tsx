@@ -34,7 +34,7 @@ const AppAside = (props: AppAsideProps) => {
             <DIV >
                 <Typography.Link rel='noopener noreferrer' href='https://github.com/houzhikai/resume' target='_blank'>
                     <CloudSyncOutlined style={{ fontSize: '2.6rem', color: '#fff', verticalAlign: 'middle' }} />
-                    <Title>智能操作平台</Title>
+                    <Title>{menuToggle ? '' : '智能操作平台'}</Title>
                 </Typography.Link>
             </DIV>
             <CustomMenu menu={menu} />

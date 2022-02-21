@@ -1,7 +1,7 @@
 const menu = [
     {
-        key: '/index',
         title: '首页',
+        key: '/index',
         icon: 'icon-shouye',
         auth: [1]
     },
