@@ -30,6 +30,7 @@ const Home = () => {
         <DIV>
           <CustomBreadcrumb arr={['通用', '按钮']} />
           <CustomBreadcrumb arr={['表单', 'FORM切换']} />
+          <CustomBreadcrumb arr={['关于我们']} />
         </DIV>
     </div>
     </>

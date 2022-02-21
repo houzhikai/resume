@@ -12,7 +12,6 @@ const menu = [
         auth: [1],
         subs: [
             { title: '按钮', key: '/public/button', icon: '' },
-            { title: '图标', key: '/public/icon', icon: '' }
         ]
     },
     {

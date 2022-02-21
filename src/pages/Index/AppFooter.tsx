@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 function AppFooter() {
   return (
     <Wrapper>
-      我是底部栏，内容暂无填充！©个人所有
+      我是底部栏，暂无内容填充！
     </Wrapper>
   );
 }
