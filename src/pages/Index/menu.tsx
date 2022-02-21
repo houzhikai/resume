@@ -21,7 +21,8 @@ const menu = [
         icon: 'icon-form_favor_light',
         auth: [1],
         subs: [
-            { title: 'form切换', key: '/form/tab', icon: '' }
+            { title: 'form切换', key: '/form/tab', icon: '' },
+            { title: '动态增减嵌套字段', key: '/form/embedded', icon: '' },
         ]
     },
     {

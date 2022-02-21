@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import { Menu, Dropdown, Layout, Avatar, Badge, Typography } from 'antd'
+import React from 'react'
+import { Menu, Dropdown, Avatar, Typography, message } from 'antd'
 import IconFont from '../../components/IconFont'
 import styled from 'styled-components'
 
@@ -24,7 +23,7 @@ const MenuItem = styled.span`
 const AppHeader = (props: any) => {
   let { menuClick, avatar, menuToggle } = props;
   const handleClick = () => {
-    console.log(111)
+    message.warn('该功能暂无开通')
   }
   const menu = (
     <Menu>
@@ -34,7 +33,7 @@ const AppHeader = (props: any) => {
           <IconFont type='icon-edit' />
           <MenuItem>个人设置</MenuItem>
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item onClick={handleClick}>
           <IconFont type='icon-settings' />
           <MenuItem>系统设置</MenuItem>
         </Menu.Item>

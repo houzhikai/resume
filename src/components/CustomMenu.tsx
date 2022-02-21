@@ -2,22 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Menu, } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
 import IconFont from './IconFont';
-
-const getOpenKeys = (data: string) => {
-    let newStr = '';
-    let newArr = [];
-    let arr = data.split('/').map((item: string) => '/' + item);
-    for (let i = 1; i < arr.length - 1; i++) {
-        newStr += arr[i]
-        newArr.push(newStr)
-    }
-    return newArr
-}
-
 interface CustomMenuProps {
     menu: any;
     location?: any;
 }
+
 const CustomMenu = (props: CustomMenuProps) => {
     const location = useLocation();
     const [state, setState] = useState({
@@ -25,6 +14,17 @@ const CustomMenu = (props: CustomMenuProps) => {
         selectedKeys: []
     })
     let { openKeys, selectedKeys } = state;
+
+    const getOpenKeys = (data: string) => {
+        let newStr = '';
+        let newArr = [];
+        let arr = data.split('/').map((item: string) => '/' + item);
+        for (let i = 1; i < arr.length - 1; i++) {
+            newStr += arr[i]
+            newArr.push(newStr)
+        }
+        return newArr
+    }
 
     // 页面刷新的时候可以定位到 menu 显示
     useEffect(() => {
