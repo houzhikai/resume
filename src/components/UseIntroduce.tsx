@@ -6,7 +6,7 @@ const UseIntroduce = (props: { describe: any }) => {
     <div className='base-style'>
       <h3>如何使用</h3>
       <Divider />
-      <p>{props.describe}</p>
+      <div>{props.describe}</div>
     </div>
   );
 }

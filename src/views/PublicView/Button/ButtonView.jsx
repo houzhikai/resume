@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Layout, Row, Col, Button, Divider } from 'antd'
+import { Layout, Row, Col, Button } from 'antd'
 import CustomBreadcrumb from '../../../components/BreadCrumbs'
 import UseIntroduce from '../../../components/UseIntroduce'
 import '../../../style/view-style/button.scss'

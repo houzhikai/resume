@@ -72,8 +72,9 @@ const FormAddSubtractFields = () => {
     setFormData(arr);
   }
   const describe = <div>
-    <DescribeP>这是套着两层的规则组，其中外面一层为规则组，里面是Card规则，第一个选择框先选择，再展示第二个选择框展示出来。</DescribeP>
-    <DescribeP>antd组件中有类似的组件，但是新增和删除都被封装成icon图片了，现在手动新增删除规则组，并且展示其文字。</DescribeP>
+    <DescribeP>1）这是套着两层的规则组，其中外面一层为规则组，里面是Card规则，第一个选择框先选择，再展示第二个选择框展示出来。</DescribeP>
+    <DescribeP>2）antd组件中有类似的组件，但是新增和删除都被封装成icon图片了，现在手动新增删除规则组，并且展示其文字。</DescribeP>
+    <DescribeP>3）其中 Card 规则内首行不可删除。</DescribeP>
   </div>
   return (
     <>

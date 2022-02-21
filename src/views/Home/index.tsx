@@ -2,19 +2,15 @@ import React from 'react';
 import UseIntroduce from '../../components/UseIntroduce';
 import CustomBreadcrumb from '../../components/BreadCrumbs'
 import { Divider, Typography } from 'antd';
-import styled from 'styled-components';
-const DIV = styled.div`
-  margin-bottom: 20px;
-`
-const KeyTag = styled.span`
-  color: #f60;
-`
+import IconFont from '../../components/IconFont';
+import { DIV } from '../../components/Div';
+import { KeyTag } from '../../components/Div';
 
 const Home = () => {
   const describe =
     <>
       <DIV>
-        该平台基于<Typography.Link href='https://ant.design/components/overview-cn/' target="_blank"><KeyTag>antd组件</KeyTag></Typography.Link>，搭建的目的主要是将平时用到的常见的问题及<KeyTag>小例子</KeyTag>以每个页面展示出来，现在只能复原其功能，还不能将代码直接拷贝到页面上，主要是巩固自己学习的知识，记录自己的点点滴滴。
+        该平台基于<Typography.Link href='https://ant.design/components/overview-cn/' target="_blank"><KeyTag>antd组件<IconFont type="icon-sousuo" /></KeyTag></Typography.Link>，搭建的目的主要是将平时用到的常见的问题及<KeyTag>小例子</KeyTag>以每个页面展示出来，现在只能复原其功能，还不能将代码直接拷贝到页面上，主要是巩固自己学习的知识，记录自己的点点滴滴。
       </DIV>
       <DIV>1）该平台暂时仅供个人使用。</DIV>
       <DIV>2）有趣的知识也可以将链接放在该平台供大家参考。</DIV>

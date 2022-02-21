@@ -25,6 +25,15 @@ const menu = [
         ]
     },
     {
+        title: '表格',
+        key: '/tabs',
+        icon: 'icon-m-tabs',
+        auth: [1],
+        subs: [
+            { title: '最基本的表格', key: '/tabs/tab', icon: '' },
+        ]
+    },
+    {
         title: '关于我们',
         key: '/about',
         icon: 'icon-guanyuwomen',

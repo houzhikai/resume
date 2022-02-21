@@ -1,7 +1,8 @@
-import React from 'react'
-import { Menu, Dropdown, Avatar, Typography, message } from 'antd'
-import IconFont from '../../components/IconFont'
-import styled from 'styled-components'
+import React from 'react';
+import { Menu, Dropdown, Avatar, Typography, message } from 'antd';
+import IconFont from '../../components/IconFont';
+import styled from 'styled-components';
+import { UserOutlined } from '@ant-design/icons';
 
 const Wrapper = styled.div`
   height: 60px;
@@ -52,7 +53,7 @@ const AppHeader = (props: any) => {
           <IconFont type='icon-github' style={{ fontSize: 22, marginRight: 22 }} />
         </Typography.Link>
         <Dropdown overlay={menu} overlayStyle={{ width: '20rem' }}>
-          <Avatar icon='Hzk' src={avatar} alt='avatar' style={{ cursor: 'pointer' }} />
+          <Avatar icon={<UserOutlined />} src={avatar} alt='avatar' style={{ cursor: 'pointer' }} /> 
         </Dropdown>
       </HeaderRight>
     </Wrapper>
