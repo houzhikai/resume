@@ -25,7 +25,7 @@ const CustomMenu = (props: CustomMenuProps) => {
         selectedKeys: []
     })
     let { openKeys, selectedKeys } = state;
-    // TODO
+
     // 页面刷新的时候可以定位到 menu 显示
     useEffect(() => {
         let { pathname } = location
@@ -39,7 +39,6 @@ const CustomMenu = (props: CustomMenuProps) => {
     }, [props, location])
     // 只展开一个 Submenu
     const onOpenChange = (openKeys: any) => {
-        console.log(openKeys)
         setState((pre: any) => {
             if (openKeys.length === 0 || openKeys.length === 1) {
                 return { ...pre, openKeys }
