@@ -94,7 +94,7 @@ const FormAddSubtractFields = () => {
                       filterOption={false}
                       placeholder="请选择规则名称"
                       onSearch={() => handleSearch(GroupIndex, index)}
-                      onChange={(e) => onNameChange(e, GroupIndex, index)}
+                      onChange={(e: any) => onNameChange(e, GroupIndex, index)}
                     >
                       {renderOptions(item.nameOptions || [])}
                     </Select>
