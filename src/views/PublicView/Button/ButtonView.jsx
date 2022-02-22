@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
-import { Layout, Row, Col, Button } from 'antd'
-import CustomBreadcrumb from '../../../components/BreadCrumbs'
-import UseIntroduce from '../../../components/UseIntroduce'
-import '../../../style/view-style/button.scss'
-import IconFont from '../../../components/IconFont'
+import React, { useState } from 'react';
+import { Layout, Row, Col, Button } from 'antd';
+import CustomBreadcrumb from '../../../components/BreadCrumbs';
+import UseIntroduce from '../../../components/UseIntroduce';
+import '../../../style/view-style/button.scss';
+import IconFont from '../../../components/IconFont';
+import {
+    PoweroffOutlined,
+    AntCloudOutlined,
+    CloudDownloadOutlined,
+    SearchOutlined,
+  } from '@ant-design/icons';
 
 const ButtonGroup = Button.Group
 
@@ -36,7 +42,7 @@ const ButtonView = () => {
                             </Button>
                             <Button
                                 type='primary'
-                                icon='poweroff'
+                                icon={<PoweroffOutlined />}
                                 loading={iconLoading}
                                 onClick={() => setIconLoading(true)}>
                                 Click me!
@@ -70,28 +76,28 @@ const ButtonView = () => {
                                 </Button>
                             </ButtonGroup>
                             <ButtonGroup>
-                                <Button type='primary' icon='cloud' />
-                                <Button type='primary' icon='cloud-download' />
+                                <Button type='primary' icon={<AntCloudOutlined />} />
+                                <Button type='primary' icon={<CloudDownloadOutlined />} />
                             </ButtonGroup>
                             <ButtonGroup>
-                                <Button type='primary' size='small' icon='cloud' />
-                                <Button type='primary' size='small' icon='cloud-download' />
+                                <Button type='primary' size='small' icon={<AntCloudOutlined />} />
+                                <Button type='primary' size='small' icon={<CloudDownloadOutlined />} />
                             </ButtonGroup>
                         </div>
                     </Col>
                     <Col span={12}>
                         <div className='base-style'>
-                            <Button type='primary' shape='circle' icon='search' />
+                            <Button type='primary' shape='circle' icon={<SearchOutlined />} />
                             <Button type='primary' shape='circle'>
                                 A
                             </Button>
-                            <Button type='primary' icon='search'>
+                            <Button type='primary' icon={<SearchOutlined />}>
                                 Search
                             </Button>
-                            <Button shape='circle' icon='search' />
-                            <Button icon='search'>Search</Button>
-                            <Button type='dashed' shape='circle' icon='search' />
-                            <Button type='dashed' icon='search'>
+                            <Button shape='circle' icon={<SearchOutlined />} />
+                            <Button icon={<SearchOutlined />}>Search</Button>
+                            <Button type='dashed' shape='circle'icon={<SearchOutlined />} />
+                            <Button type='dashed'icon={<SearchOutlined />}>
                                 Search
                             </Button>
                         </div>

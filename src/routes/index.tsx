@@ -3,7 +3,7 @@ import ButtonView from "../views/PublicView/Button/ButtonView";
 import FormLayout from "../views/FormView/FormLayout";
 import FormAddSubtractFields from "../views/FormView/FormAddSubtractFields";
 import AboutUs from "../views/About/AboutUs";
-import BaseTab from "../views/Base/BaseTab";
+import BaseTab from "../views/Table/BaseTab";
 
 const routes: any = [
   { path: '/index', exact: true, name: '首页', component: Home, auth: [1] },

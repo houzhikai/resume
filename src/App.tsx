@@ -19,8 +19,8 @@ function App() {
     <Wrapper>
     <Router>
       <Switch>
-        <Route component={Index} />
-        <Route exact path="/" render={() => <Redirect to="/" />} />
+          <Route exact path="/" render={() => <Redirect to="/index" />} />
+          <Route component={Index} />
         <Route exact path="*" component={NoMatch} />
       </Switch>
     </Router>

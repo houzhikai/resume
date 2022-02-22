@@ -8,3 +8,5 @@ useLocation 可以拿到当前的 location，用于 刷新页面时 可以自动
 
  Warning: findDOMNode is deprecated in StrictMode. findDOMNode was passed an instance of Transition which is inside StrictMode
  解决方案： 在 index.tsx 中去掉严格模式，只留下 <App>, 即可
+ 文字水平垂直居中，最简单的方法是 margin: auto;
+ 在选择首页时，要将首页 <Route component={Index} /> 放在 重定向  <Route exact path="/" render={() => <Redirect to="/index" />} /> 之后，这样即使在 url #/ 后面不填什么，也可以保证默认进入首页，不会出现页面为空的情况。

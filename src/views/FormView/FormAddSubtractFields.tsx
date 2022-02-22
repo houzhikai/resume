@@ -14,7 +14,8 @@ const FormCard = styled.div`
    margin-bottom: 10px;
 `
 const RemoveButton = styled.div`
-  line-height: 104px;
+  margin: auto;
+
 `
 const DescribeP = styled.p`
   margin-bottom: 10px;
@@ -89,7 +90,7 @@ const FormAddSubtractFields = () => {
                   <Form.Item>
                     <Select
                       showSearch
-                      style={{ width: 220 }}
+                      style={{ width: 320 }}
                       filterOption={false}
                       placeholder="请选择规则名称"
                       onSearch={() => handleSearch(GroupIndex, index)}
@@ -102,7 +103,7 @@ const FormAddSubtractFields = () => {
                     <Select
                       mode="multiple"
                       allowClear
-                      style={{ width: 220 }}
+                      style={{ width: 320 }}
                       placeholder="请选择机构保险产品编码"
                     >
                       {renderOptions(item.valueOption)}
