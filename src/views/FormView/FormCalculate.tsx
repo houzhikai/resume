@@ -36,12 +36,18 @@ const FormCalculate = () => {
   }
   useEffect(() => {
     if (!(value1 || value2)) {
-      return;
-    }
-    else if (value1 && value2 === undefined) {
+      const proportion1: any = '';
+      setProportion1(proportion1)
+      const proportion2: any = '';
+      setProportion2(proportion2)
+    } else if (value1 && !value2) {
       const proportion1: any = 100;
       setProportion1(proportion1)
-    } else if (value2 && value1 === undefined) {
+      const proportion2: any = '';
+      setProportion2(proportion2)
+    } else if (value2 && !value1) {
+      const proportion1: any = '';
+      setProportion1(proportion1)
       const proportion2: any = 100;
       setProportion2(proportion2)
     } else if (value1 && value2) {
