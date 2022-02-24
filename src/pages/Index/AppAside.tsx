@@ -32,7 +32,7 @@ const AppAside = (props: AppAsideProps) => {
     return (
         <Sider style={{ minHeight: '100vh' }} collapsed={menuToggle}>
             <DIV >
-                <Typography.Link rel='noopener noreferrer' href='https://github.com/houzhikai/resume' target='_blank'>
+                <Typography.Link rel='noopener noreferrer' href='./' target='_self'>
                     <CloudSyncOutlined style={{ fontSize: '2.6rem', color: '#fff', verticalAlign: 'middle' }} />
                     <Title>{menuToggle ? '' : '智能操作平台'}</Title>
                 </Typography.Link>

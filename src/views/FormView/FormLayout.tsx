@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "antd/dist/antd.css";
-import { Form, Input, Button, Radio } from "antd";
+import { Form, Input, Button, Radio, message } from "antd";
 import CustomBreadcrumb from '../../components/BreadCrumbs';
 import UseIntroduce from "../../components/UseIntroduce"
 
@@ -33,7 +33,8 @@ const FormLayout = () => {
       inputB: e.inputB,
       ignore: e.ignore
     }
-    console.log('params', params)
+    console.log('params', params);
+    message.info('提交成功')
   };
   return (
     <>

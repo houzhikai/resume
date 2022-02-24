@@ -70,6 +70,9 @@ const FormCalculate = () => {
       <DIV>
         3）当改变 Input 框数字时，后面的所占比例将是可以随时改变的，所以就需要用到<KeyTag> useEffect </KeyTag>，计算他们的比例，所占比例不需要过多操作，所以将它置灰。
       </DIV>
+      <DIV>
+        4）<KeyTag>问题：</KeyTag> 校验只能输入数字有问题，原因不明。
+      </DIV>
     </DIV>
   return (
     <>
