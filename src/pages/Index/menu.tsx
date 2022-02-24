@@ -23,6 +23,7 @@ const menu = [
             { title: 'form切换', key: '/form/tab', icon: '' },
             { title: '动态增减嵌套字段', key: '/form/embedded', icon: '' },
             { title: '自动计算百分比', key: '/form/calculate', icon: '' },
+            { title: '步骤表单', key: '/form/step', icon: '' },
         ]
     },
     {
