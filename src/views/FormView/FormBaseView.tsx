@@ -75,7 +75,7 @@ const FormBaseView = () => {
   };
   const describe =
     <DIV>
-      describe
+      一般不需要 value setValue 去设置 formItem 数据，因为 form 本身就封装过一遍。
     </DIV>;
   return (
     <>
