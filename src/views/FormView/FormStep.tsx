@@ -3,7 +3,7 @@ import { Steps, Divider, Form, Select, Input, Button, message, Result, Typograph
 import CustomBreadcrumb from '../../components/BreadCrumbs';
 import UseIntroduce from '../../components/UseIntroduce';
 import styled from 'styled-components';
-import { DIV, KeyTag } from '../../components/Div'
+import { DIV, KeyTag } from '../../components/Div';
 
 const { Step } = Steps
 const { Option } = Select
@@ -34,6 +34,13 @@ const FormStepView = () => {
     }
   }
   const Step1Form = () => {
+
+    const validateUsername = (rule: any, value: any) => {
+      // 校验手机号
+      const reg = /^(?:(?:\+|00)86)?1(?:(?:3[\d])|(?:4[5-79])|(?:5[0-35-9])|(?:6[5-7])|(?:7[0-8])|(?:8[\d])|(?:9[189]))\d{8}$/;
+      if (!(reg.test(value))) return Promise.reject('请输入正确的手机号');
+      return Promise.resolve();
+    }
     const renderOpts = () => {
       const option = ['小明', '小红', '小丽']
       return option.map((opt: any) => <Option value={opt}>{opt}</Option>)
@@ -56,7 +63,16 @@ const FormStepView = () => {
       }
     }
     return (
-      <Form {...formItemLayout} initialValues={{ prefix: '手机号' }} onFinish={onFinish}>
+      <Form
+        {...formItemLayout}
+        initialValues={{
+          recipient: formData.recipient || null,
+          email: formData.email || null,
+          note: formData.note || null,
+          phone: formData.phone || null,
+          prefix: formData.prefix || '手机号',
+        }}
+        onFinish={onFinish} >
         <Form.Item
           name="recipient"
           label="接收人" rules={[
@@ -104,6 +120,9 @@ const FormStepView = () => {
             {
               required: true,
               message: '请输入正确的手机号格式',
+            },
+            {
+              validator: validateUsername
             }
           ]}
         >
@@ -160,8 +179,9 @@ const FormStepView = () => {
       <DIV>第二页怎么能拿到第一页的值？ 根据button 按钮用 htmlType 为 summit ；Form 组件 onFinish 将里面的数据提取出来。</DIV>
       <DIV>暂存的问题:</DIV>
       <DIV>1）<Text delete>第一页<KeyTag>接收人和内容</KeyTag>没有做校验处理。</Text></DIV>
-      <DIV>2）第二页返回上一页时，数据被清空了。</DIV>
+      <DIV>2）<Text delete>第二页返回上一页时，数据被清空了。</Text></DIV>
       <DIV>3）<Text delete>接收人 <KeyTag>Option </KeyTag>最好改成数组遍历的样式。</Text></DIV>
+      <DIV>4）判断手机号和微信的联系方式时，自定义校验只是校验的手机号方式。</DIV>
     </DIV>
   return (
     <>
