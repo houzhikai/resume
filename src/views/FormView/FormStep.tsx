@@ -17,24 +17,15 @@ min-height: 380px;
 const FormStepView = () => {
   const [current, setCurrent] = useState(0)
   const [formData, setFormData] = useState<any>({})
-  // const [form] = Form.useForm();
+
   // 步骤条样式
   const formItemLayout = {
-    labelCol: {
-      span: 8
-    },
-    wrapperCol: {
-      span: 8
-    }
+    labelCol: { span: 8 },
+    wrapperCol: { span: 8 },
   }
-  // button 按钮样式
-  const tailFormItemLayout = {
-    wrapperCol: {
-      offset: 8
-    }
-  }
-  const Step1Form = () => {
 
+  const Step1Form = () => {
+    // 自定义校验
     const validateUsername = (rule: any, value: any) => {
       // 校验手机号
       const reg = /^(?:(?:\+|00)86)?1(?:(?:3[\d])|(?:4[5-79])|(?:5[0-35-9])|(?:6[5-7])|(?:7[0-8])|(?:8[\d])|(?:9[189]))\d{8}$/;
@@ -43,7 +34,7 @@ const FormStepView = () => {
     }
     const renderOpts = () => {
       const option = ['小明', '小红', '小丽']
-      return option.map((opt: any) => <Option value={opt}>{opt}</Option>)
+      return option.map((opt: any) => <Option key={opt} value={opt}>{opt}</Option>)
     }
     const prefixSelector = (
       <Form.Item name="prefix" noStyle>
@@ -128,7 +119,7 @@ const FormStepView = () => {
         >
           <Input placeholder="首先选择联系方式" addonBefore={prefixSelector} />
         </Form.Item>
-        <Button type='primary'{...tailFormItemLayout} style={{ marginLeft: 360 }} htmlType="submit">下一步</Button>
+        <Button type='primary' style={{ marginLeft: 360 }} htmlType="submit">下一步</Button>
       </Form>
     )
   }
@@ -153,7 +144,7 @@ const FormStepView = () => {
         <Form.Item label="联系方式">{formData.phone}</Form.Item>
         <>
           <Button style={{ marginLeft: 360 }} onClick={handlePre}>上一步</Button>
-          <Button type='primary'{...tailFormItemLayout} loading={loading} style={{ marginLeft: 10 }} onClick={handleSubmit} >提交</Button>
+          <Button type='primary' loading={loading} style={{ marginLeft: 10 }} onClick={handleSubmit} >提交</Button>
         </>
       </Form>
     )
@@ -165,7 +156,13 @@ const FormStepView = () => {
         title="发送成功"
         subTitle="耐心等待好消息吧！"
         extra={[
-          <Button type='primary' key='console' onClick={() => setCurrent(0)}>
+          <Button
+            type='primary'
+            key='console'
+            onClick={() => {
+              setCurrent(0);
+              setFormData({});
+            }}>
             再发一封
           </Button>,
           <Button key='buy' onClick={() => message.info('暂时没有记录！')}>查看记录</Button>
