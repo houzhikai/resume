@@ -7,11 +7,7 @@ import UseIntroduce from "../../components/UseIntroduce"
 const FormLayout = () => {
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState("horizontal");
-  const [ignore, setIgnore] = useState(true);
 
-  const handleToggleIgnore = () => {
-    setIgnore(!ignore);
-  };
   useEffect(() => {
     form.setFieldsValue({
       layout: formLayout ?? "horizontal",
@@ -74,7 +70,7 @@ const FormLayout = () => {
           <Input placeholder="input placeholder" />
         </Form.Item>
         <Form.Item label="Field C" name="ignore">
-          <Radio.Group value={ignore} onChange={handleToggleIgnore}>
+          <Radio.Group>
             <Radio value={true}>忽略</Radio>
             <Radio value={false}>不忽略</Radio>
           </Radio.Group>
