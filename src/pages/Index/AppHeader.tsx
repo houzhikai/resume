@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Dropdown, Avatar, Typography, message } from 'antd';
+import { Menu, Dropdown, Avatar, Typography, message, Popconfirm } from 'antd';
 import IconFont from '../../components/IconFont';
 import styled from 'styled-components';
 import { UserOutlined } from '@ant-design/icons';
@@ -43,9 +43,11 @@ const AppHeader = (props: any) => {
           <IconFont type='icon-settings' />
           <MenuItem>系统设置</MenuItem>
         </Menu.Item>
-        <Menu.Item onClick={handleExit}>
+        <Menu.Item >
           <IconFont type='icon-tuichu' />
+          <Popconfirm title="确定退出登录?" cancelText='取消' okText="确定" onConfirm={() => handleExit()}>
           <MenuItem>退出登录</MenuItem>
+          </Popconfirm>
         </Menu.Item>
       </Menu.ItemGroup>
     </Menu>
@@ -58,6 +60,9 @@ const AppHeader = (props: any) => {
         type={menuToggle ? 'icon-menu-fold' : 'icon-menu-unfold'}
       />
       <HeaderRight>
+        <Typography.Link rel='noopener noreferrer' href='https://www.yuque.com/dashboard' target='_blank' >
+          <IconFont type='icon-yuque' style={{ fontSize: 22, marginRight: 22 }} />
+        </Typography.Link>
         <Typography.Link rel='noopener noreferrer' href='https://github.com/houzhikai/resume' target='_blank' >
           <IconFont type='icon-github' style={{ fontSize: 22, marginRight: 22 }} />
         </Typography.Link>
