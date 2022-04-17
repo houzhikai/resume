@@ -6,6 +6,7 @@ import {
     Redirect,
 } from "react-router-dom";
 import Index from './pages/Index'
+import Login from './views/Login/index';
 import { NoMatch } from './pages/Index/NoMatch'
 import './style/base.scss'
 import './style/App.scss'
@@ -19,7 +20,8 @@ function App() {
     <Wrapper>
     <Router>
       <Switch>
-          <Route exact path="/" render={() => <Redirect to="/index" />} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/" render={() => <Redirect to="/login" />} />
           <Route component={Index} />
         <Route exact path="*" component={NoMatch} />
       </Switch>

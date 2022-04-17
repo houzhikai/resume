@@ -3,6 +3,7 @@ import { Menu, Dropdown, Avatar, Typography, message } from 'antd';
 import IconFont from '../../components/IconFont';
 import styled from 'styled-components';
 import { UserOutlined } from '@ant-design/icons';
+import { useHistory } from 'react-router-dom';
 
 const Wrapper = styled.div`
   height: 60px;
@@ -23,8 +24,12 @@ const MenuItem = styled.span`
 
 const AppHeader = (props: any) => {
   let { menuClick, avatar, menuToggle } = props;
+  const history = useHistory()
   const handleClick = () => {
     message.warn('该功能暂无开通')
+  }
+  const handleExit = () => {
+    history.push('/login');
   }
   const menu = (
     <Menu>
@@ -37,6 +42,10 @@ const AppHeader = (props: any) => {
         <Menu.Item onClick={handleClick}>
           <IconFont type='icon-settings' />
           <MenuItem>系统设置</MenuItem>
+        </Menu.Item>
+        <Menu.Item onClick={handleExit}>
+          <IconFont type='icon-tuichu' />
+          <MenuItem>退出登录</MenuItem>
         </Menu.Item>
       </Menu.ItemGroup>
     </Menu>
