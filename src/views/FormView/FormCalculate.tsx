@@ -20,7 +20,7 @@ const FormCalculate = () => {
 
   const handleChange1 = (e: any) => {
     // 只能保留两位小数
-    const numberValue = (e.target.value).replace(/^(\-)*(\d+)\.(\d\d).*$/, "$1$2.$3");
+    const numberValue = (e.target.value).replace(/^(\\-)*(\d+)\.(\d\d).*$/, "$1$2.$3");
     const reg = /^-?\d*(\.\d*)?$/;
     if ((!isNaN(numberValue) && reg.test(numberValue)) || numberValue === '') {
       setValue1(numberValue)
@@ -28,7 +28,7 @@ const FormCalculate = () => {
   }
   const handleChange2 = (e: any) => {
     // 只能保留两位小数
-    const numberValue = (e.target.value).replace(/^(\-)*(\d+)\.(\d\d).*$/, "$1$2.$3");
+    const numberValue = (e.target.value).replace(/^(\\-)*(\d+)\.(\d\d).*$/, "$1$2.$3");
     const reg = /^-?\d*(\.\d*)?$/;
     if ((!isNaN(numberValue) && reg.test(numberValue)) || numberValue === '') {
       setValue2(numberValue)

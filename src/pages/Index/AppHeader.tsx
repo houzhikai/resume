@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Menu, Dropdown, Avatar, Typography, message, Popconfirm, Modal, Button, Form, Input, Upload } from 'antd';
+import { Menu, Dropdown, Avatar, Typography, message, Popconfirm, Modal, Button, Form, Input } from 'antd';
 import IconFont from '../../components/IconFont';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
