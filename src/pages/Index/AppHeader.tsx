@@ -1,8 +1,7 @@
-import React from 'react';
-import { Menu, Dropdown, Avatar, Typography, message, Popconfirm } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Menu, Dropdown, Avatar, Typography, message, Popconfirm, Modal, Button, Form, Input, Upload } from 'antd';
 import IconFont from '../../components/IconFont';
 import styled from 'styled-components';
-import { UserOutlined } from '@ant-design/icons';
 import { useHistory } from 'react-router-dom';
 
 const Wrapper = styled.div`
@@ -12,46 +11,68 @@ const Wrapper = styled.div`
   padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
-`
+`;
 const HeaderRight = styled.div`
   display: flex;
   align-items: center;
   margin-right: 24px;
-`
+`;
 const MenuItem = styled.span`
   margin-left: 8px;
+`;
+const Username = styled.div`
+  color: #f40;
+  margin-left: 16px;
 `
 
 const AppHeader = (props: any) => {
-  let { menuClick, avatar, menuToggle } = props;
-  const history = useHistory()
+  const [visible, setVisible] = useState(false);
+  const [username, setUsername] = useState('测试名字');
+  let { menuClick, menuToggle } = props;
+  useEffect(() => {
+    const name = JSON.parse(window.localStorage.getItem('name') || '');
+    setUsername(name);
+  }, []);
+
+  const history = useHistory();
+  const [form] = Form.useForm();
+
+  const handleOk = async () => {
+    console.log('确定完成');
+    setVisible(true);
+    const values = await form.validateFields();
+    window.localStorage.setItem('name', JSON.stringify(values.name));
+    setUsername(values.name);
+    setVisible(false);
+  };
   const handleClick = () => {
-    message.warn('该功能暂无开通')
-  }
+    message.warn('该功能暂无开通');
+  };
   const handleExit = () => {
     history.push('/login');
-  }
+  };
+
   const menu = (
     <Menu>
       <Menu.ItemGroup title='用户设置'>
         <Menu.Divider />
-        <Menu.Item onClick={handleClick}>
+        <Menu.Item key='1' onClick={() => setVisible(true)}>
           <IconFont type='icon-edit' />
-          <MenuItem>个人设置</MenuItem>
+          <MenuItem >个人设置</MenuItem>
         </Menu.Item>
-        <Menu.Item onClick={handleClick}>
+        <Menu.Item key='2' onClick={handleClick}>
           <IconFont type='icon-settings' />
-          <MenuItem>系统设置</MenuItem>
+          <MenuItem >系统设置</MenuItem>
         </Menu.Item>
-        <Menu.Item >
+        <Menu.Item key='3'>
           <IconFont type='icon-tuichu' />
           <Popconfirm title="确定退出登录?" cancelText='取消' okText="确定" onConfirm={() => handleExit()}>
-          <MenuItem>退出登录</MenuItem>
+            <MenuItem >退出登录</MenuItem>
           </Popconfirm>
         </Menu.Item>
       </Menu.ItemGroup>
     </Menu>
-  )
+  );
   return (
     <Wrapper>
       <IconFont
@@ -66,12 +87,33 @@ const AppHeader = (props: any) => {
         <Typography.Link rel='noopener noreferrer' href='https://github.com/houzhikai/resume' target='_blank' >
           <IconFont type='icon-github' style={{ fontSize: 22, marginRight: 22 }} />
         </Typography.Link>
-        <Dropdown overlay={menu} overlayStyle={{ width: '20rem' }}>
-          <Avatar icon={<UserOutlined />} src={avatar} alt='avatar' style={{ cursor: 'pointer' }} /> 
+        <Dropdown trigger={['click']} overlay={menu} overlayStyle={{ width: '20rem' }}>
+          <Avatar src="https://joeschmoe.io/api/v1/random" alt='avatar' style={{ cursor: 'pointer' }} />
         </Dropdown>
+        <Username>{username}</Username>
       </HeaderRight>
+      <Modal
+        title="个人中心"
+        visible={visible}
+        onCancel={() => setVisible(false)}
+        footer={[
+          <Button onClick={() => setVisible(false)}>取消</Button>,
+          <Button type="primary" onClick={handleOk}>确定</Button>
+        ]} >
+        <Form
+          form={form}
+          labelCol={{ span: 6 }}
+          wrapperCol={{ span: 10 }}
+          initialValues={{ name: username }}
+          autoComplete="off"
+        >
+          <Form.Item label="修改用户名" name="name" >
+            <Input placeholder='请输入用户名' />
+          </Form.Item>
+        </Form>
+      </Modal>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default AppHeader
+export default AppHeader;

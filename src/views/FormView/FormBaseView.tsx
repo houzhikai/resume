@@ -90,7 +90,7 @@ const FormBaseView = () => {
               message: '请输入用户名！'
             }
           ]}>
-            <Input placeholder="请输入用户名" />
+            <Input placeholder="请输入用户名" autoComplete='off' />
           </Form.Item>
           <Form.Item name="sex" label="性别" rules={[
             {
@@ -133,7 +133,7 @@ const FormBaseView = () => {
               },
             ]}
           >
-            <Input placeholder='请输入邮箱地址' />
+            <Input placeholder='请输入邮箱地址' autoComplete='off' />
           </Form.Item>
           <Form.Item
             name="password"
@@ -174,7 +174,7 @@ const FormBaseView = () => {
             <Cascader options={casCaderOptions} placeholder='请选择家庭地址' />
           </Form.Item>
           <Form.Item name="phone" label="联系电话" rules={[{ required: true, message: "请输入联系电话" }]}>
-            <Input placeholder='请输入联系电话' />
+            <Input placeholder='请输入联系电话' autoComplete='off' />
           </Form.Item>
           <Form.Item name="rate" label="评分" rules={[{ required: true, message: "请打分" }]}>
             <Rate allowHalf />
