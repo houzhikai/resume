@@ -12,6 +12,7 @@ const menu = [
         auth: [1],
         subs: [
             { title: '按钮', key: '/public/button', icon: '' },
+            { title: '上传', key: '/public/upload', icon: '' },
         ]
     },
     {

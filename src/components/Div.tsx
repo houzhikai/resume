@@ -6,5 +6,7 @@ export const DIV = styled.div`
 
 export const KeyTag = styled.span`
   color: #f60;
+  font-weight: 800;
   cursor: pointer;
+  margin: 0 6px ;
 `

@@ -1,5 +1,6 @@
 import Home from "../views/Home";
 import ButtonView from "../views/PublicView/Button/ButtonView";
+import UploadView from "../views/PublicView/Upload";
 import FormLayout from "../views/FormView/FormLayout";
 import FormAddSubtractFields from "../views/FormView/FormAddSubtractFields";
 import AboutUs from "../views/About/AboutUs";
@@ -11,6 +12,7 @@ import FormBaseView from "../views/FormView/FormBaseView";
 const routes: any = [
   { path: '/index', exact: true, name: '首页', component: Home, auth: [1] },
   { path: '/public/button', exact: true, name: '图标', component: ButtonView, auth: [1] },
+  { path: '/public/upload', exact: true, name: '上传', component: UploadView, auth: [1] },
   { path: '/form/tab', exact: true, name: 'form切换', component: FormLayout, auth: [1] },
   { path: '/form/embedded', exact: true, name: '动态增减嵌套字段', component: FormAddSubtractFields, auth: [1] },
   { path: '/form/calculate', exact: true, name: '自动计算百分比', component: FormCalculate, auth: [1] },
