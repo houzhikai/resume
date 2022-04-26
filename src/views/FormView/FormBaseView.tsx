@@ -181,7 +181,7 @@ const FormBaseView = () => {
           </Form.Item>
           <Form.Item name="reading" style={{ marginLeft: 320 }} >
             <Checkbox value={checkValue} onChange={onCheckValue}>
-              阅读并理解 <a href='https://github.com/ltadpoles'>此协议</a>
+              阅读并理解 <a href='https://www.gwdang.com/static_page/privacy_policy.html' target='_blank' rel="noreferrer">此协议</a>
             </Checkbox>
           </Form.Item>
           <Form.Item >

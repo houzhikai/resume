@@ -17,6 +17,7 @@ const Upload = () => {
     <>
       <CustomBreadcrumb arr={['表单', '上传']} />
       <UseIntroduce describe={describe} />
+      <a href='https://blog.csdn.net/Alanrnzearn/article/details/112268892' target='_blank' rel="noreferrer">推荐文章</a>
     </>
   );
 };
