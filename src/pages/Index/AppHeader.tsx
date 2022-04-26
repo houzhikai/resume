@@ -21,8 +21,11 @@ const MenuItem = styled.span`
   margin-left: 8px;
 `;
 const Username = styled.div`
-  color: #f40;
+  color: #000;
+  font-weight: 700;
   margin-left: 16px;
+  cursor: pointer;
+  font-family: 'source-code-pro', 'Menlo', 'Monaco', 'Consolas', 'Courier New', 'monospace';
 `
 
 const AppHeader = (props: any) => {
@@ -32,14 +35,14 @@ const AppHeader = (props: any) => {
   useEffect(() => {
     const name = JSON.parse(window.localStorage.getItem('name') || '');
     setUsername(name);
-  }, []);
+  }, [username]);
 
   const history = useHistory();
   const [form] = Form.useForm();
 
   const handleOk = async () => {
-    console.log('确定完成');
     setVisible(true);
+    // 拿到 form 表单的值
     const values = await form.validateFields();
     window.localStorage.setItem('name', JSON.stringify(values.name));
     setUsername(values.name);
@@ -90,7 +93,7 @@ const AppHeader = (props: any) => {
         <Dropdown trigger={['click']} overlay={menu} overlayStyle={{ width: '20rem' }}>
           <Avatar src="https://joeschmoe.io/api/v1/random" alt='avatar' style={{ cursor: 'pointer' }} />
         </Dropdown>
-        <Username>{username}</Username>
+        <Username onClick={() => setVisible(true)}>{username}</Username>
       </HeaderRight>
       <Modal
         title="个人中心"
