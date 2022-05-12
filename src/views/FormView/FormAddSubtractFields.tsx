@@ -3,12 +3,9 @@ import CustomBreadcrumb from '../../components/BreadCrumbs';
 import UseIntroduce from '../../components/UseIntroduce';
 import { Form, Button, Space, Select, Card, message } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
-import { KeyTag } from '../../components/Div';
+import { KeyTag, FormWrapper } from '../../components/Div';
 import styled from 'styled-components';
-const FormWrapper = styled.div`
-  background: white;
-   padding: 10px; 
-`
+
 const FormCard = styled.div`
    display: flex;
    flex-direction: row;

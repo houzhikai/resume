@@ -2,17 +2,11 @@ import React, { useState } from 'react';
 import { Steps, Divider, Form, Select, Input, Button, message, Result, Typography } from 'antd'
 import CustomBreadcrumb from '../../components/BreadCrumbs';
 import UseIntroduce from '../../components/UseIntroduce';
-import styled from 'styled-components';
-import { DIV, KeyTag } from '../../components/Div';
+import { DIV, KeyTag, FormWrapper } from '../../components/Div';
 
 const { Step } = Steps
 const { Option } = Select
 const { Text } = Typography
-const FormWrapper = styled.div`
-padding: 20px;
-background: white;
-min-height: 380px;
-`
 
 const FormStepView = () => {
   const [current, setCurrent] = useState(0)

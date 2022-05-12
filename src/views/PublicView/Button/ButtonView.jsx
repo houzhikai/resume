@@ -4,6 +4,7 @@ import CustomBreadcrumb from '../../../components/BreadCrumbs';
 import UseIntroduce from '../../../components/UseIntroduce';
 import '../../../style/view-style/button.scss';
 import IconFont from '../../../components/IconFont';
+import CustomBottom from './CustomBottom';
 import {
     PoweroffOutlined,
     AntCloudOutlined,
@@ -51,7 +52,7 @@ const ButtonView = () => {
                             <Button type='primary' shape='circle' loading />
                             <Button type='danger' shape='round' loading />
                         </div>
-                        <div className='base-style'>
+                        <div className='base-style' style={{ height: '247px'}}>
                             <h4>Basic</h4>
                             <ButtonGroup>
                                 <Button>large</Button>
@@ -131,6 +132,8 @@ const ButtonView = () => {
                     </Col>
                 </Row>
             </div>
+            
+            <CustomBottom />
         </Layout>
     )
 }

@@ -10,3 +10,8 @@ export const KeyTag = styled.span`
   cursor: pointer;
   margin: 0 6px ;
 `
+
+export const FormWrapper = styled.div`
+   background: white;
+   padding: 10px; 
+`;

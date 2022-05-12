@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 import CustomBreadcrumb from '../../components/BreadCrumbs';
 import UseIntroduce from '../../components/UseIntroduce';
-import { DIV } from '../../components/Div';
+import { DIV, FormWrapper } from '../../components/Div';
 import { Button, Cascader, Checkbox, DatePicker, Divider, Form, Input, Radio, Rate } from 'antd';
-import styled from 'styled-components';
 
-const FormWrapper = styled.div`
-  padding: 20px;
-  background: white;
-  min-height: 380px;
-`;
 
 const FormBaseView = () => {
   const [checkValue, setCheckValue] = useState(false);
