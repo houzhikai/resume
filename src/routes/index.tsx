@@ -1,7 +1,7 @@
 import Home from "../views/Home";
 import ButtonView from "../views/PublicView/Button/ButtonView";
 import UploadView from "../views/PublicView/Upload";
-import FormLayout from "../views/FormView/FormLayout";
+import FormLayout from "../views/FormView/FormTab";
 import FormAddSubtractFields from "../views/FormView/FormAddSubtractFields";
 import AboutUs from "../views/About/AboutUs";
 import BaseTab from "../views/Table/BaseTab";
@@ -20,6 +20,6 @@ const routes: any = [
   { path: '/form/base', exact: true, name: '基本表单', component: FormBaseView, auth: [1] },
   { path: '/tabs/tab', exact: true, name: '最基本的表格', component: BaseTab, auth: [1] },
   { path: '/about', exact: true, name: '关于我们', component: AboutUs, auth: [1] },
-]
+];
 
 export default routes;

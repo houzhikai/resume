@@ -12,3 +12,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.myCopy{
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background: inherit;
+  color: #167cd0; 
+  margin: 0 6px;
+}
+.myCopy:hover:after{
+  position: absolute;
+  content: "复制";
+  top: -13px;
+  bottom: 0px;
+  left: calc(100% + 6px);
+  right: 0;
+  width: 30px;
+}

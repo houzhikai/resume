@@ -4,13 +4,13 @@ import CustomBreadcrumb from '../../../components/BreadCrumbs';
 import UseIntroduce from '../../../components/UseIntroduce';
 import '../../../style/view-style/button.scss';
 import IconFont from '../../../components/IconFont';
-import CustomBottom from './CustomBottom';
 import {
     PoweroffOutlined,
     AntCloudOutlined,
     CloudDownloadOutlined,
     SearchOutlined,
   } from '@ant-design/icons';
+import CustomButton from './customButton';
 
 const ButtonGroup = Button.Group
 
@@ -132,8 +132,7 @@ const ButtonView = () => {
                     </Col>
                 </Row>
             </div>
-            
-            <CustomBottom />
+            <CustomButton />
         </Layout>
     )
 }
