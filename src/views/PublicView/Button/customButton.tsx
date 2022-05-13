@@ -32,6 +32,9 @@ function CustomButton() {
         <Form.Item label="复制组件2">
           <MyCopy isShow label="这是我复制的内容11" />
         </Form.Item>
+        <Form.Item label="复制组件3">
+          <MyCopy label="这是我复制的内容113333" />
+        </Form.Item>
       </FormWrapper>
     </>
 
