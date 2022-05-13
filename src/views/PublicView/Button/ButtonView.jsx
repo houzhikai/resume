@@ -132,7 +132,6 @@ const ButtonView = () => {
                     </Col>
                 </Row>
             </div>
-            <CustomButton />
         </Layout>
     )
 }

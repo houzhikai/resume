@@ -103,7 +103,6 @@ const BaseTab = () => {
       title: '名字',
       dataIndex: 'name',
       key: 'name',
-      render: (text: any) => <span>{text}</span>,
     },
     {
       title: '年龄',

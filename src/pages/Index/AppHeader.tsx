@@ -26,7 +26,7 @@ const Username = styled.div`
   margin-left: 16px;
   cursor: pointer;
   font-family: 'source-code-pro', 'Menlo', 'Monaco', 'Consolas', 'Courier New', 'monospace';
-`
+`;
 
 const AppHeader = (props: any) => {
   const [visible, setVisible] = useState(false);

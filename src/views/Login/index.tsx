@@ -1,19 +1,18 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
 import { Image, Form, Input, Button, Checkbox, message } from 'antd';
 import { useHistory } from "react-router-dom";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
-    border: 1px solid #ccc;
-    width: 1000px;
-    height: 600px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-top: -300px;
-    margin-left: -500px;
-    display: flex;
-
+  border: 1px solid #ccc;
+  width: 1000px;
+  height: 600px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -300px;
+  margin-left: -500px;
+  display: flex;
 `;
 const Left = styled.div`
   width: 60%;
@@ -29,8 +28,8 @@ const Title = styled.div`
   margin-top: 120px;
   margin-bottom: 60px;
 `;
-
-function Login() {
+const Login = () => {
+  const [checkValue, setCheckValue] = useState(false);
   const history = useHistory();
 
   const onFinish = (values: { username: string, password: string; }) => {
@@ -45,6 +44,10 @@ function Login() {
     console.log('Failed:', errorInfo);
   };
 
+  // 同意协议
+  const onCheckValue = (e: any) => {
+    setCheckValue(e.target.checked);
+  };
 
   return (
     <Wrapper>
@@ -75,7 +78,13 @@ function Login() {
             name="password"
             rules={[{ required: true, message: '请输入密码!' }]}
           >
-            <Input.Password />
+            <Input.Password visibilityToggle={false} />
+          </Form.Item>
+
+          <Form.Item name="reading" style={{ margin: ' 0 0 0 64px' }} >
+            <Checkbox value={checkValue} onChange={onCheckValue}>
+              阅读并理解 <a href='https://www.gwdang.com/static_page/privacy_policy.html' target='_blank' rel="noreferrer">此协议</a>
+            </Checkbox>
           </Form.Item>
 
           <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 4, span: 16 }}>
@@ -83,7 +92,7 @@ function Login() {
           </Form.Item>
 
           <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <Button type="primary" htmlType="submit">
+            <Button disabled={!checkValue} type="primary" htmlType="submit">
               登录
             </Button>
           </Form.Item>

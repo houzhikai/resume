@@ -17,8 +17,10 @@ code {
   cursor: pointer;
   border: none;
   background: inherit;
-  color: #167cd0; 
   margin: 0 6px;
+}
+.myCopy:hover{
+  color: #167cd0; 
 }
 .myCopy:hover:after{    
   position: absolute;
