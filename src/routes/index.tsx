@@ -6,6 +6,7 @@ import FormLayout from "../views/FormView/FormTab";
 import FormAddSubtractFields from "../views/FormView/FormAddSubtractFields";
 import AboutUs from "../views/About/AboutUs";
 import BaseTab from "../views/Table/BaseTab";
+import SearchTable from "../views/Table/SearchTable/SearchTable";
 import FormCalculate from "../views/FormView/FormCalculate";
 import FormStepView from "../views/FormView/FormStep";
 import FormBaseView from "../views/FormView/FormBaseView";
@@ -22,6 +23,7 @@ const routes: any = [
   { path: '/form/step', exact: true, name: '步骤表单', component: FormStepView, auth: [1] },
   { path: '/form/base', exact: true, name: '基本表单', component: FormBaseView, auth: [1] },
   { path: '/tabs/tab', exact: true, name: '最基本的表格', component: BaseTab, auth: [1] },
+  { path: '/tabs/searchTable', exact: true, name: '搜索表单', component: SearchTable, auth: [1] },
   { path: '/about', exact: true, name: '关于我们', component: AboutUs, auth: [1] },
 ];
 

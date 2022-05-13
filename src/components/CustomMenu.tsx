@@ -12,7 +12,7 @@ const CustomMenu = (props: CustomMenuProps) => {
     const [state, setState] = useState({
         openKeys: [],
         selectedKeys: []
-    })
+    });
     let { openKeys, selectedKeys } = state;
 
     const getOpenKeys = (data: string) => {
@@ -20,38 +20,38 @@ const CustomMenu = (props: CustomMenuProps) => {
         let newArr = [];
         let arr = data.split('/').map((item: string) => '/' + item);
         for (let i = 1; i < arr.length - 1; i++) {
-            newStr += arr[i]
-            newArr.push(newStr)
+            newStr += arr[i];
+            newArr.push(newStr);
         }
-        return newArr
-    }
+        return newArr;
+    };
 
     // 页面刷新的时候可以定位到 menu 显示
     useEffect(() => {
-        let { pathname } = location
+        let { pathname } = location;
         setState((prevState: any) => {
             return {
                 ...prevState,
                 selectedKeys: [pathname],
                 openKeys: getOpenKeys(pathname)
-            }
-        })
-    }, [props, location])
+            };
+        });
+    }, [props, location]);
     // 只展开一个 Submenu
     const onOpenChange = (openKeys: any) => {
         setState((pre: any) => {
             if (openKeys.length === 0 || openKeys.length === 1) {
-                return { ...pre, openKeys }
+                return { ...pre, openKeys };
             }
-            const latestOpenKey = openKeys[openKeys.length - 1]
+            const latestOpenKey = openKeys[openKeys.length - 1];
             // 自定义的路由规则
             if (latestOpenKey.includes(openKeys[0])) {
-                return { ...pre, openKeys }
+                return { ...pre, openKeys };
             } else {
-                return { ...pre, openKeys: [latestOpenKey] }
+                return { ...pre, openKeys: [latestOpenKey] };
             }
-        })
-    }
+        });
+    };
 
     const renderMenuItem = ({ key, icon, title }: any) => (
         <Menu.Item key={key}>
@@ -60,7 +60,7 @@ const CustomMenu = (props: CustomMenuProps) => {
                 <span>{title}</span>
             </Link>
         </Menu.Item>
-    )
+    );
     // 遍历子项 subs
     const renderSubMenu = ({ key, icon, title, subs }: any) => {
         return (
@@ -75,12 +75,12 @@ const CustomMenu = (props: CustomMenuProps) => {
             >
                 {
                     subs && subs.map((item: any) => {
-                        return item.subs && item.subs.length > 0 ? renderSubMenu(item) : renderMenuItem(item)
+                        return item.subs && item.subs.length > 0 ? renderSubMenu(item) : renderMenuItem(item);
                     })
                 }
             </Menu.SubMenu>
-        )
-    }
+        );
+    };
     return (
         <Menu
             mode='inline'
@@ -92,11 +92,11 @@ const CustomMenu = (props: CustomMenuProps) => {
         >
             {
                 props.menu.map((item: any) => {
-                    return item.subs && item.subs.length > 0 ? renderSubMenu(item) : renderMenuItem(item)
+                    return item.subs && item.subs.length > 0 ? renderSubMenu(item) : renderMenuItem(item);
                 })
             }
         </Menu>
     );
-}
+};
 
 export default CustomMenu;

@@ -10,7 +10,6 @@ import {
     CloudDownloadOutlined,
     SearchOutlined,
   } from '@ant-design/icons';
-import CustomButton from './customButton';
 
 const ButtonGroup = Button.Group
 

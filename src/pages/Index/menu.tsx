@@ -36,6 +36,7 @@ const menu = [
         auth: [1],
         subs: [
             { title: '最基本的表格', key: '/tabs/tab', icon: '' },
+            { title: '搜索表单', key: '/tabs/searchTable', icon: '' },
         ]
     },
     {
