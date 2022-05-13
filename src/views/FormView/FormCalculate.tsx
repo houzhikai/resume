@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import CustomBreadcrumb from '../../components/BreadCrumbs';
+import CustomBreadcrumb from '../../components/CustomBreadcrumb';
 import UseIntroduce from '../../components/UseIntroduce';
 import { Space, Input } from 'antd';
 import styled from 'styled-components';
-import { DIV, KeyTag } from '../../components/Div'
+import { DIV, KeyTag } from '../../components/Div';
 
 const FormWrapper = styled.div`
   display: flex;
@@ -11,53 +11,53 @@ const FormWrapper = styled.div`
   width: 100%;
   background: white;
   padding: 20px;
-`
+`;
 const FormCalculate = () => {
-  const [value1, setValue1] = useState()
-  const [value2, setValue2] = useState()
-  const [proportion1, setProportion1] = useState()
-  const [proportion2, setProportion2] = useState()
+  const [value1, setValue1] = useState();
+  const [value2, setValue2] = useState();
+  const [proportion1, setProportion1] = useState();
+  const [proportion2, setProportion2] = useState();
 
   const handleChange1 = (e: any) => {
     // 只能保留两位小数
     const numberValue = (e.target.value).replace(/^(\\-)*(\d+)\.(\d\d).*$/, "$1$2.$3");
     const reg = /^-?\d*(\.\d*)?$/;
     if ((!isNaN(numberValue) && reg.test(numberValue)) || numberValue === '') {
-      setValue1(numberValue)
+      setValue1(numberValue);
     }
-  }
+  };
   const handleChange2 = (e: any) => {
     // 只能保留两位小数
     const numberValue = (e.target.value).replace(/^(\\-)*(\d+)\.(\d\d).*$/, "$1$2.$3");
     const reg = /^-?\d*(\.\d*)?$/;
     if ((!isNaN(numberValue) && reg.test(numberValue)) || numberValue === '') {
-      setValue2(numberValue)
+      setValue2(numberValue);
     }
-  }
+  };
   useEffect(() => {
     if (!(value1 || value2)) {
       const proportion1: any = '';
-      setProportion1(proportion1)
+      setProportion1(proportion1);
       const proportion2: any = '';
-      setProportion2(proportion2)
+      setProportion2(proportion2);
     } else if (value1 && !value2) {
       const proportion1: any = 100;
-      setProportion1(proportion1)
+      setProportion1(proportion1);
       const proportion2: any = '';
-      setProportion2(proportion2)
+      setProportion2(proportion2);
     } else if (value2 && !value1) {
       const proportion1: any = '';
-      setProportion1(proportion1)
+      setProportion1(proportion1);
       const proportion2: any = 100;
-      setProportion2(proportion2)
+      setProportion2(proportion2);
     } else if (value1 && value2) {
       const value = Number(value1) + Number(value2);
-      const proportion1: any = (value1 / value * 100).toFixed(2)
-      setProportion1(proportion1)
-      const proportion2: any = (value2 / value * 100).toFixed(2)
-      setProportion2(proportion2)
+      const proportion1: any = (value1 / value * 100).toFixed(2);
+      setProportion1(proportion1);
+      const proportion2: any = (value2 / value * 100).toFixed(2);
+      setProportion2(proportion2);
     }
-  }, [value1, value2])
+  }, [value1, value2]);
 
   const describe =
     <DIV>
@@ -73,7 +73,7 @@ const FormCalculate = () => {
       <DIV>
         4）<KeyTag>问题：</KeyTag> 校验只能输入数字有问题，原因不明。
       </DIV>
-    </DIV>
+    </DIV>;
   return (
     <>
       <CustomBreadcrumb arr={['表单', '自动计算百分比 ']} />
@@ -90,6 +90,6 @@ const FormCalculate = () => {
       </FormWrapper>
     </>
   );
-}
+};
 
 export default FormCalculate;

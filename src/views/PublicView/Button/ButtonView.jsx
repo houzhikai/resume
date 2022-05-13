@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Layout, Row, Col, Button } from 'antd';
-import CustomBreadcrumb from '../../../components/BreadCrumbs';
+import CustomBreadcrumb from '../../../components/CustomBreadcrumb';
 import UseIntroduce from '../../../components/UseIntroduce';
 import '../../../style/view-style/button.scss';
 import IconFont from '../../../components/IconFont';

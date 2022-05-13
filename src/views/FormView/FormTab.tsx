@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "antd/dist/antd.css";
 import { Form, Input, Button, Radio, message } from "antd";
-import CustomBreadcrumb from '../../components/BreadCrumbs';
+import CustomBreadcrumb from '../../components/CustomBreadcrumb';
 import UseIntroduce from "../../components/UseIntroduce";
 
 const FormLayout = () => {

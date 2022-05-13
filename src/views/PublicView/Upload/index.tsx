@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
-import CustomBreadcrumb from '../../../components/BreadCrumbs';
+import CustomBreadcrumb from '../../../components/CustomBreadcrumb';
 import UseIntroduce from '../../../components/UseIntroduce';
-import { KeyTag, FormWrapper } from '../../../components/Div';
+import { KeyTag, FormWrapper, DescribeP } from '../../../components/Div';
 import { Button, Form, Upload, message } from 'antd';
-import styled from 'styled-components';
 import { UploadOutlined } from '@ant-design/icons';
 
-const DescribeP = styled.p`
-margin-bottom: 10px;
-`;
-
 const UploadView = () => {
-  const [fileList, setFileList] = useState([]);
+  const [fileList] = useState([]);
 
   const props = {
     beforeUpload: (file: any) => {

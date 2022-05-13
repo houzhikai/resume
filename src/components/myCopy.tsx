@@ -16,7 +16,6 @@ const CopyValue = styled.div`
 `;
 const MyCopy = (props: CustomBottomProps) => {
   const { label, isShow } = props;
-  console.log('isShow', isShow);
   const copy = new ClipboardJS('.myCopy');
   copy.on('success', (e: any) => {
     message.success('复制成功！');
@@ -28,7 +27,7 @@ const MyCopy = (props: CustomBottomProps) => {
       className="myCopy"
       type="button"
     >
-      <Tooltip title={label}>
+      <Tooltip title={isShow ? label : ''}>
         <CopyValue >{label}</CopyValue>
       </Tooltip>
     </button>

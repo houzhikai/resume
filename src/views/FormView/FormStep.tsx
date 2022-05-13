@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import { Steps, Divider, Form, Select, Input, Button, message, Result, Typography } from 'antd'
-import CustomBreadcrumb from '../../components/BreadCrumbs';
+import { Steps, Divider, Form, Select, Input, Button, message, Result, Typography } from 'antd';
+import CustomBreadcrumb from '../../components/CustomBreadcrumb';
 import UseIntroduce from '../../components/UseIntroduce';
 import { DIV, KeyTag, FormWrapper } from '../../components/Div';
 
-const { Step } = Steps
-const { Option } = Select
-const { Text } = Typography
+const { Step } = Steps;
+const { Option } = Select;
+const { Text } = Typography;
 
 const FormStepView = () => {
-  const [current, setCurrent] = useState(0)
-  const [formData, setFormData] = useState<any>({})
+  const [current, setCurrent] = useState(0);
+  const [formData, setFormData] = useState<any>({});
 
   // 步骤条样式
   const formItemLayout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 8 },
-  }
+  };
 
   const Step1Form = () => {
     // 自定义校验
@@ -25,11 +25,11 @@ const FormStepView = () => {
       const reg = /^(?:(?:\+|00)86)?1(?:(?:3[\d])|(?:4[5-79])|(?:5[0-35-9])|(?:6[5-7])|(?:7[0-8])|(?:8[\d])|(?:9[189]))\d{8}$/;
       if (!(reg.test(value))) return Promise.reject('请输入正确的手机号');
       return Promise.resolve();
-    }
+    };
     const renderOpts = () => {
-      const option = ['小明', '小红', '小丽']
-      return option.map((opt: any) => <Option key={opt} value={opt}>{opt}</Option>)
-    }
+      const option = ['小明', '小红', '小丽'];
+      return option.map((opt: any) => <Option key={opt} value={opt}>{opt}</Option>);
+    };
     const prefixSelector = (
       <Form.Item name="prefix" noStyle>
         <Select style={{ width: 100 }}>
@@ -40,13 +40,13 @@ const FormStepView = () => {
     );
     const onFinish = (e: any) => {
       if (!e.email || !e.note || !e.phone || !e.prefix || !e.recipient) {
-        message.error('请完成必填选项')
-        setCurrent(current)
+        message.error('请完成必填选项');
+        setCurrent(current);
       } else {
-        setFormData(e)
-        setCurrent(current + 1)
+        setFormData(e);
+        setCurrent(current + 1);
       }
-    }
+    };
     return (
       <Form
         {...formItemLayout}
@@ -115,20 +115,20 @@ const FormStepView = () => {
         </Form.Item>
         <Button type='primary' style={{ marginLeft: 360 }} htmlType="submit">下一步</Button>
       </Form>
-    )
-  }
+    );
+  };
   const Step2Form = () => {
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
     const handlePre = () => {
-      setCurrent(current - 1)
-    }
+      setCurrent(current - 1);
+    };
     const handleSubmit = () => {
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
         setCurrent(current + 1);
       }, 2000);
-    }
+    };
     return (
       <Form {...formItemLayout}>
         <Form.Item label="接收人">{formData.recipient}</Form.Item>
@@ -141,8 +141,8 @@ const FormStepView = () => {
           <Button type='primary' loading={loading} style={{ marginLeft: 10 }} onClick={handleSubmit} >提交</Button>
         </>
       </Form>
-    )
-  }
+    );
+  };
   const Step3Form = () => {
     return (
       <Result
@@ -162,8 +162,8 @@ const FormStepView = () => {
           <Button key='buy' onClick={() => message.info('暂时没有记录！')}>查看记录</Button>
         ]}
       />
-    )
-  }
+    );
+  };
 
   const describe =
     <DIV>
@@ -173,7 +173,7 @@ const FormStepView = () => {
       <DIV>2）<Text delete>第二页返回上一页时，数据被清空了。</Text></DIV>
       <DIV>3）<Text delete>接收人 <KeyTag>Option </KeyTag>最好改成数组遍历的样式。</Text></DIV>
       <DIV>4）判断手机号和微信的联系方式时，自定义校验只是校验的手机号方式。</DIV>
-    </DIV>
+    </DIV>;
   return (
     <>
       <CustomBreadcrumb arr={['表单', '步骤表单 ']} />
@@ -199,6 +199,6 @@ const FormStepView = () => {
       </FormWrapper>
     </>
   );
-}
+};
 
 export default FormStepView;

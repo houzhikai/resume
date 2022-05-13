@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomBreadcrumb from '../../components/BreadCrumbs';
+import CustomBreadcrumb from '../../components/CustomBreadcrumb';
 import UseIntroduce from '../../components/UseIntroduce';
 
 function AboutUs() {

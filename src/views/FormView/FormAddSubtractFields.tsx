@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CustomBreadcrumb from '../../components/BreadCrumbs';
+import CustomBreadcrumb from '../../components/CustomBreadcrumb';
 import UseIntroduce from '../../components/UseIntroduce';
 import { Form, Button, Space, Select, Card, message } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
@@ -10,14 +10,14 @@ const FormCard = styled.div`
    display: flex;
    flex-direction: row;
    margin-bottom: 10px;
-`
+`;
 const RemoveButton = styled.div`
   margin: auto;
 
-`
+`;
 const DescribeP = styled.p`
   margin-bottom: 10px;
-`
+`;
 
 const { Option } = Select;
 
@@ -26,7 +26,7 @@ const FormAddSubtractFields = () => {
 
   const renderOptions = (options: any) => options.map((option: any) => (
     <Option key={option} value={option}>{option}</Option>
-  ))
+  ));
 
   const add = (index: number | undefined) => {
     let arr = JSON.parse(JSON.stringify(formData));
@@ -42,23 +42,23 @@ const FormAddSubtractFields = () => {
     let arr = JSON.parse(JSON.stringify(formData));
     if (index !== undefined) {
       if (arr[GroupIndex].length === 1) {
-        return message.error('首行不可删除')
+        return message.error('首行不可删除');
       }
       arr[GroupIndex].splice(index, 1);
     } else {
       arr.splice(GroupIndex, 1);
     }
     setFormData(arr);
-  }
+  };
 
   const handleSearch = (GroupIndex: number, index: number) => {
     let arr = JSON.parse(JSON.stringify(formData));
     arr[GroupIndex][index] = {
       ...arr[GroupIndex][index],
       nameOptions: ['业务场景码', '前置保障计划', '当前保障计划'],
-    }
+    };
     setFormData(arr);
-  }
+  };
 
   const onNameChange = (e: any, GroupIndex: number, index: number) => {
     let arr = JSON.parse(JSON.stringify(formData));
@@ -69,12 +69,12 @@ const FormAddSubtractFields = () => {
       valueOption: ['一号项目增转商', '二号项目增转商', '三号项目增转商']
     };
     setFormData(arr);
-  }
+  };
   const describe = <div>
     <DescribeP>1）这是套着两层的规则组，其中外面一层为规则组，里面是Card规则，第一个选择框先<KeyTag>搜索</KeyTag>选择，再展示第二个选择框展示出来。</DescribeP>
     <DescribeP>2）antd组件中有类似的组件，但是新增和删除都被封装成icon图片了，现在手动新增删除规则组，并且展示其文字。</DescribeP>
     <DescribeP>3）其中 Card 规则内首行不可删除。</DescribeP>
-  </div>
+  </div>;
   return (
     <>
       <CustomBreadcrumb arr={['表单', '动态增减嵌套字段']} />
@@ -125,5 +125,5 @@ const FormAddSubtractFields = () => {
       </FormWrapper>
     </>
   );
-}
+};
 export default FormAddSubtractFields;

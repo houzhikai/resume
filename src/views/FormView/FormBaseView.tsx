@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CustomBreadcrumb from '../../components/BreadCrumbs';
+import CustomBreadcrumb from '../../components/CustomBreadcrumb';
 import UseIntroduce from '../../components/UseIntroduce';
 import { DIV, FormWrapper } from '../../components/Div';
 import { Button, Cascader, Checkbox, DatePicker, Divider, Form, Input, Radio, Rate } from 'antd';

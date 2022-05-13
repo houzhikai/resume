@@ -3,7 +3,7 @@ import { Breadcrumb } from 'antd';
 import { Link } from 'react-router-dom';
 
 
-const BreadCrumbs = (props: any) => {
+const CustomBreadcrumb = (props: any) => {
   return (
     <Breadcrumb style={{ marginBottom: 16 }}>
       <Breadcrumb.Item>
@@ -16,14 +16,14 @@ const BreadCrumbs = (props: any) => {
               <Breadcrumb.Item key={res.path}>
                 <Link to={res.path}>{res.title}</Link>
               </Breadcrumb.Item>
-            )
+            );
           } else {
-            return <Breadcrumb.Item key={res}>{res}</Breadcrumb.Item>
+            return <Breadcrumb.Item key={res}>{res}</Breadcrumb.Item>;
           }
         })
       }
     </Breadcrumb>
   );
-}
+};
 
-export default BreadCrumbs;
+export default CustomBreadcrumb;

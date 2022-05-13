@@ -12,6 +12,7 @@ const menu = [
         auth: [1],
         subs: [
             { title: '按钮', key: '/public/button', icon: '' },
+            { title: '复制', key: '/public/myCopy', icon: '' },
             { title: '上传', key: '/public/upload', icon: '' },
         ]
     },
@@ -43,6 +44,6 @@ const menu = [
         icon: 'icon-guanyuwomen',
         auth: [1]
     }
-]
+];
 
 export default menu;
