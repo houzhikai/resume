@@ -20,7 +20,7 @@ function CustomButton() {
   </div>;
   return (
     <>
-      <CustomBreadcrumb arr={['表单', '复制']} />
+      <CustomBreadcrumb arr={['通用', '复制']} />
       <UseIntroduce describe={describe} />
       <FormWrapper>
         <Form.Item label="复制组件">
