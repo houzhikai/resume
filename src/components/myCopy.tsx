@@ -14,13 +14,14 @@ const CopyValue = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
 `;
+
+const copy = new ClipboardJS('.myCopy');
+copy.on('success', (e: any) => {
+  message.success('复制成功！');
+});
+
 const MyCopy = (props: CustomBottomProps) => {
   const { label, isShow } = props;
-  const copy = new ClipboardJS('.myCopy');
-  copy.on('success', (e: any) => {
-    message.success('复制成功！');
-  });
-
   return (
     <button
       data-clipboard-text={label}

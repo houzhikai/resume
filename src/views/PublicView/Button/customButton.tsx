@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from 'antd';
+import { Form, Typography } from 'antd';
 import { DescribeP, FormWrapper, KeyTag } from '../../../components/Div';
 import MyCopy from '../../../components/myCopy';
 import CustomBreadcrumb from '../../../components/CustomBreadcrumb';
@@ -11,7 +11,12 @@ function CustomButton() {
     <DescribeP>2）浮在需要复制的文本上，右上角会出现<KeyTag>复制</KeyTag>字样，点击文本后会有复制成功的字样出现，表示已经复制成功了。</DescribeP>
     <DescribeP>3）同时添加了文本过长展示...的效果。</DescribeP>
     <DescribeP>4）可以通过 <KeyTag>isShow=true/false</KeyTag>来控制要不要展示提示框。</DescribeP>
-    <DescribeP>5）现在存在的问题，<KeyTag>1.</KeyTag>当页面有多个复制组件时，复制成功会有多个同时出现。<KeyTag>2.</KeyTag>尽量找到一个可以替代复制字样的icon。</DescribeP>
+    <DescribeP>5）现在存在的问题，
+      <Typography.Text delete>
+        <KeyTag>1.</KeyTag>当页面有多个复制组件时，复制成功会有多个同时出现。
+      </Typography.Text>
+      <KeyTag>2.</KeyTag>尽量找到一个可以替代复制字样的icon。
+    </DescribeP>
   </div>;
   return (
     <>
@@ -25,7 +30,7 @@ function CustomButton() {
           <MyCopy isShow={false} label="内容" />
         </Form.Item>
         <Form.Item label="复制组件2">
-          <MyCopy isShow label="这是我复制的内容" />
+          <MyCopy isShow label="这是我复制的内容11" />
         </Form.Item>
       </FormWrapper>
     </>
