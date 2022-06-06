@@ -40,6 +40,15 @@ const menu = [
         ]
     },
     {
+        title: '动画',
+        key: '/transform',
+        icon: 'icon-chuangkoudonghua',
+        auth: [1],
+        subs: [
+            { title: '旋转', key: '/transform/rotate', icon: '' },
+        ]
+    },
+    {
         title: '关于我们',
         key: '/about',
         icon: 'icon-guanyuwomen',
