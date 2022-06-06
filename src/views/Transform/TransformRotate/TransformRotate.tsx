@@ -7,9 +7,9 @@ import './TransformRotate.scss'
 
 function TransformRotate() {
 
-  const describe = <div>
-    无
-  </div>
+  const describe = <div style={{ textAlign: 'center', color: 'red', fontSize: '20px' }}>
+    旋转动画
+  </div >
   return (
     <>
       <CustomBreadcrumb arr={['动画', '旋转']} />
