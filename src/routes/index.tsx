@@ -10,6 +10,7 @@ import SearchTable from "../views/Table/SearchTable/SearchTable";
 import FormCalculate from "../views/FormView/FormCalculate";
 import FormStepView from "../views/FormView/FormStep";
 import FormBaseView from "../views/FormView/FormBaseView";
+import TransformZoom from '../views/Transform/TransformZoom/TransformZoom'
 import TransformRotate from '../views/Transform/TransformRotate/TransformRotate'
 
 
@@ -25,6 +26,7 @@ const routes: any = [
   { path: '/form/base', exact: true, name: '基本表单', component: FormBaseView, auth: [1] },
   { path: '/tabs/tab', exact: true, name: '最基本的表格', component: BaseTab, auth: [1] },
   { path: '/tabs/searchTable', exact: true, name: '搜索表单', component: SearchTable, auth: [1] },
+  { path: '/transform/zoom', exact: true, name: '旋转', component: TransformZoom, auth: [1] },
   { path: '/transform/rotate', exact: true, name: '旋转', component: TransformRotate, auth: [1] },
   { path: '/about', exact: true, name: '关于我们', component: AboutUs, auth: [1] },
 ];

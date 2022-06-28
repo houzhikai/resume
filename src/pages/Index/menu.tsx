@@ -45,6 +45,7 @@ const menu = [
         icon: 'icon-chuangkoudonghua',
         auth: [1],
         subs: [
+            { title: '缩放', key: '/transform/zoom', icon: '' },
             { title: '旋转', key: '/transform/rotate', icon: '' },
         ]
     },
