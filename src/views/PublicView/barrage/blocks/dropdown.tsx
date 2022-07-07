@@ -1,6 +1,6 @@
 import { DownOutlined } from '@ant-design/icons';
 import { MenuProps, Tooltip } from 'antd';
-import { Button, Dropdown, Menu, Space } from 'antd';
+import { Button, Dropdown, Menu } from 'antd';
 import React, { useState } from 'react';
 import '../style/dropdown.scss'
 
