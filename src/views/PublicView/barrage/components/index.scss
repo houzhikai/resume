@@ -1,0 +1,32 @@
+main {
+  background: #fff;
+  padding: 20px;
+}
+.screen {
+  background: #bfa;
+  margin-bottom: 10px;
+}
+.workStation{
+  border: 1px solid red;
+  background: #DFDBDB;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+    input {
+      width: 400px;
+      line-height: 40px;
+      border-radius: 10px;
+      border: #999;
+      padding: 0 20px;
+    }
+    .send {
+      line-height: 40px;
+      padding: 0 20px;
+      border: none;
+      background: #1890ff;
+      color: #fff;
+      margin-left: 6px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+}
