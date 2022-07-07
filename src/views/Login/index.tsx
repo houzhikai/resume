@@ -37,7 +37,7 @@ const Login = () => {
       message.error('用户名或密码输入错误！');
       return false;
     }
-    history.push('./index');
+    history.push('./home');
   };
 
   const onFinishFailed = (errorInfo: any) => {

@@ -36,6 +36,8 @@ function Barrage() {
           color="#000"
         />
       );
+      // 清空 input 数据
+        setBullet('')
     }
   };
   const describe = <div>

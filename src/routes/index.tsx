@@ -16,7 +16,7 @@ import TransformRotate from '../views/Transform/TransformRotate/TransformRotate'
 
 
 const routes: any = [
-  { path: '/index', exact: true, name: '首页', component: Home, auth: [1] },
+  { path: '/home', exact: true, name: '首页', component: Home, auth: [1] },
   { path: '/public/button', exact: true, name: '图标', component: ButtonView, auth: [1] },
   { path: '/public/myCopy', exact: true, name: '复制', component: CustomerButton, auth: [1] },
   { path: '/public/upload', exact: true, name: '上传', component: UploadView, auth: [1] },
