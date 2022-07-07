@@ -69,7 +69,6 @@ export default class BulletScreen {
 
   push(item, opts = {}) {
     const options = Object.assign({}, this.options, opts);
-    console.log({ options });
 
     const { onStart, onEnd, top } = options;
     const bulletContainer = getContainer({
@@ -79,7 +78,6 @@ export default class BulletScreen {
 
     // 加入当前存在的弹幕列表
     this.bullets.push(bulletContainer);
-    console.log('push before queues', this.queues, this.tracks);
     const currIdletrack = this._getTrack();
     if (currIdletrack === -1 || this.allPaused) {
       // 考虑到全部暂停的情景
@@ -137,11 +135,8 @@ export default class BulletScreen {
           entries.forEach(entry => {
             // 完全处于视窗之内
             const { intersectionRatio, target } = entry;
-            console.log('bullet id', target.id, intersectionRatio);
             if (intersectionRatio >= 1) {
               let trackIdx = target.dataset.track;
-              console.log('curr track value', this.tracks[trackIdx]);
-              console.log('curr queues', this.queues);
               if (this.queues.length) {
                 const [item, container, customTop] = this.queues.shift();
                 this._render(item, container, trackIdx, customTop);

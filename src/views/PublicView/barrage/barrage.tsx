@@ -12,6 +12,8 @@ function Barrage() {
   const [screen, setScreen] = useState<any>(null);
   // 弹幕内容
   const [bullet, setBullet] = useState('');
+  // 选择仅内容还是用户
+  const [selectType, setSelectType] = useState('用户')
   useEffect(() => {
     // 给页面中某个元素初始化弹幕屏幕，一般为一个大区块。此处的配置项全局生效
     //  duration 滚动时长，数值越小滚动越快
@@ -28,15 +30,19 @@ function Barrage() {
       if (screen === null) {
         return;
       }
-      // 仅内容 push 纯文本
-      screen.push(<div className='bulletWord'>{ bullet }</div>);
-
-      // 用户 使用 StyleBullet                                                 弹幕文字颜色
-      screen?.push(<StyledBullet head={headUrl}  msg={bullet}  size='normal' color="#000" /> );
-      // 清空 input 数据
+      if (selectType === '仅内容') {
+       screen.push(<div className='bulletWord'>{ bullet }</div>);
+       setBullet('')
+      } else if (selectType === '用户') {
+              // 用户 使用 StyleBullet                                                 弹幕文字颜色
+        screen?.push(<StyledBullet head={headUrl} msg={bullet} size='normal' color="#000" />);
         setBullet('')
+      }
     }
   };
+  const getChildCount = (value: any) => {
+    setSelectType(value)
+  }
   const describe = <div>
     <DescribeP>
       <DIV>1）暂无内容，将要写一个弹幕效果</DIV>
@@ -54,7 +60,7 @@ function Barrage() {
             <input placeholder='请文明发言...' value={bullet} onChange={handleChange} />
             <button className='send' onClick={handleSend} >发送</button>
           </div>
-          <DropdownButton />
+          <DropdownButton getCount={getChildCount} />
         </div>
       </main>
     </>
