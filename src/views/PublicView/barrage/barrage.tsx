@@ -6,7 +6,6 @@ import { DescribeP } from '../../../components/Div';
 import UseIntroduce from '../../../components/UseIntroduce';
 
 const headUrl = 'https://zerosoul.github.io/rc-bullets/assets/img/heads/girl.jpg';
-
 function Barrage() {
   // 弹幕屏幕
   const [screen, setScreen] = useState<any>(null);
@@ -14,8 +13,9 @@ function Barrage() {
   const [bullet, setBullet] = useState('');
   useEffect(() => {
     // 给页面中某个元素初始化弹幕屏幕，一般为一个大区块。此处的配置项全局生效
-    let s = new BulletScreen('.screen', { duration: 20 });
-    setScreen(s);
+    //  duration 滚动时长，数值越小滚动越快
+    let value = new BulletScreen('.screen', { duration: 10 });
+    setScreen(value);
   }, []);
   // 弹幕内容输入事件处理
   const handleChange = ({target:{ value }}:any) => {
@@ -28,11 +28,13 @@ function Barrage() {
       if (screen === null) {
         return;
       }
+      // 使用 StyleBullet
       screen?.push(
         <StyledBullet
           head={headUrl}
           msg={bullet}
           size='normal'
+          // 弹幕文字颜色
           color="#000"
         />
       );
@@ -58,5 +60,4 @@ function Barrage() {
     </>
   );
 }
-
 export default Barrage;
