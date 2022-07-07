@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import BulletScreen, { StyledBullet } from './components/index';
-import './components/index.scss'
+import './style/barrage.scss'
 import CustomBreadcrumb from '../../../components/CustomBreadcrumb';
-import { DescribeP } from '../../../components/Div';
+import { DescribeP, DIV, KeyTag } from '../../../components/Div';
 import UseIntroduce from '../../../components/UseIntroduce';
+import DropdownButton from './blocks/dropdown';
 
-const headUrl = 'https://zerosoul.github.io/rc-bullets/assets/img/heads/girl.jpg';
+const headUrl = 'https://img.win3000.com/m00/64/3c/46d9f60ef87732950100c11587ac4421_c_345_458.jpg';
 function Barrage() {
   // 弹幕屏幕
   const [screen, setScreen] = useState<any>(null);
@@ -24,26 +25,22 @@ function Barrage() {
   // 发送弹幕
   const handleSend = () => {
     if (bullet) {
-      // push 纯文本
       if (screen === null) {
         return;
       }
-      // 使用 StyleBullet
-      screen?.push(
-        <StyledBullet
-          head={headUrl}
-          msg={bullet}
-          size='normal'
-          // 弹幕文字颜色
-          color="#000"
-        />
-      );
+      // 仅内容 push 纯文本
+      screen.push(<div className='bulletWord'>{ bullet }</div>);
+
+      // 用户 使用 StyleBullet                                                 弹幕文字颜色
+      screen?.push(<StyledBullet head={headUrl}  msg={bullet}  size='normal' color="#000" /> );
       // 清空 input 数据
         setBullet('')
     }
   };
   const describe = <div>
-    <DescribeP>1）暂无内容，将要写一个弹幕效果
+    <DescribeP>
+      <DIV>1）暂无内容，将要写一个弹幕效果</DIV>
+      <DIV>2) 将要实现的功能： <KeyTag>选择 用户或者 仅内容，展示不同的弹幕类型</KeyTag></DIV>
     </DescribeP>
   </div>;
   return (
@@ -53,8 +50,11 @@ function Barrage() {
       <main>
         <div className="screen" style={{ width: '100%', overflowX: 'hidden', height: '360px' }}></div>
         <div className='workStation'>
-          <input placeholder='请文明发言...' value={bullet} onChange={handleChange} />
-          <button className='send' onClick={handleSend}>发送</button>
+          <div>
+            <input placeholder='请文明发言...' value={bullet} onChange={handleChange} />
+            <button className='send' onClick={handleSend} >发送</button>
+          </div>
+          <DropdownButton />
         </div>
       </main>
     </>

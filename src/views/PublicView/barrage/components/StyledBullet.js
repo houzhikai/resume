@@ -27,9 +27,10 @@ const HeadStyle = {
   boxShadow: '0 0 .8em rgba(0, 0, 0, 0.8)'
 };
 const ImageStyle = {
-  borderRadius: '50%',
+  borderRadius: '4px',
   width: '100%',
-  height: '100%'
+  height: '100%',
+  padding: '6px',
 };
 const sizes = {
   small: '10px',

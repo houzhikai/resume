@@ -2,6 +2,9 @@ main {
   background: #fff;
   padding: 20px;
 }
+.bulletWord{
+  font-size: 20px;
+}
 .screen {
   background: #bfa;
   margin-bottom: 10px;
@@ -10,14 +13,15 @@ main {
   border: 1px solid red;
   background: #DFDBDB;
   height: 60px;
-  text-align: center;
   line-height: 60px;
+  display: flex;
     input {
       width: 400px;
       line-height: 40px;
       border-radius: 10px;
       border: #999;
       padding: 0 20px;
+      margin-left: 100px;
     }
     .send {
       line-height: 40px;
