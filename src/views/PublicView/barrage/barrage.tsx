@@ -6,6 +6,7 @@ import { DescribeP, DIV, KeyTag } from '../../../components/Div';
 import UseIntroduce from '../../../components/UseIntroduce';
 import DropdownButton from './blocks/dropdown';
 import OpenBullet from './blocks/openBullet';
+import Setting from './blocks/setting';
 
 const headUrl = 'https://img.win3000.com/m00/64/3c/46d9f60ef87732950100c11587ac4421_c_345_458.jpg';
 function Barrage() {
@@ -17,12 +18,15 @@ function Barrage() {
   const [selectType, setSelectType] = useState('用户')
   // 是否打开弹幕
   const [isOpenBullet, setIsOpenBullet] = useState<boolean>(false)
+  // 默认的弹幕速度
+  const [bulletSpeed, setBulletSpeed] = useState<number>(80)
   useEffect(() => {
     // 给页面中某个元素初始化弹幕屏幕，一般为一个大区块。此处的配置项全局生效
     //  duration 滚动时长，数值越小滚动越快
-    let value = new BulletScreen('.screen', { duration: 10 });
+    console.log(bulletSpeed)
+    let value = new BulletScreen('.screen', { duration: (100 - bulletSpeed), loopCount: 'infinite' });
     setScreen(value);
-  }, []);
+  }, [bulletSpeed]);
   useEffect(() => {
     const mocked = ['11', '22', '我是mock数据1', '我是mock数据2', '我是mock数据3', '我是mock数据4', '我是mock数据5', '我是mock数据6', '我是mock数据7', '我是mock数据8', '我是mock数据9', '我是mock数据10', '我是mock数据11', '我是mock数据12', '我是mock数据13',]
     if (isOpenBullet) {
@@ -32,7 +36,7 @@ function Barrage() {
           screen?.push(<StyledBullet head={headUrl} msg={item} size='normal' color="#000" />)
       )
     }
-  }, [screen, isOpenBullet])
+  }, [screen, isOpenBullet, selectType])
   // 弹幕内容输入事件处理
   const handleChange = ({target:{ value }}:any) => {
     setBullet(value);
@@ -47,7 +51,6 @@ function Barrage() {
        screen.push(<div className='bulletWord'>{ bullet }</div>);
        setBullet('')
       } else if (selectType === '用户') {
-              // 用户 使用 StyleBullet                                                 弹幕文字颜色
         screen?.push(<StyledBullet head={headUrl} msg={bullet} size='normal' color="#000" />);
         setBullet('')
       }
@@ -59,6 +62,10 @@ function Barrage() {
   const handleToggleBullet = (value: boolean) => {
     setIsOpenBullet(value)
   }
+  const handleChangeBulletSpeed = (value: number) => {
+    setBulletSpeed(value)
+  }
+
   const describe = <div>
     <DescribeP>
       <DIV>1）暂无内容，将要写一个弹幕效果</DIV>
@@ -72,7 +79,8 @@ function Barrage() {
       <main>
         <div className="screen" style={{ width: '100%', overflowX: 'hidden', height: '360px' }}></div>
         <div className='workStation'>
-          <OpenBullet handleToggleBullet={ handleToggleBullet } />
+          <OpenBullet handleToggleBullet={handleToggleBullet} />
+          <Setting handleChangeBulletSpeed={ handleChangeBulletSpeed } defaultSpeed={bulletSpeed} />
           <div>
             <input placeholder='请文明发言...' value={bullet} onChange={handleChange} />
             <button className='send' onClick={handleSend} >发送</button>
