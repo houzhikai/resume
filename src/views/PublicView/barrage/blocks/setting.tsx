@@ -19,10 +19,10 @@ function Setting(props: Props) {
     handleChangeLoopCount(e.target.value)
   }
   const marks: SliderMarks = {
-    10: 10,
-    50: 50,
-    70: 70,
-    80: 80,
+    10: 60,
+    50: 70,
+    70: 80,
+    80: 90,
     100: {
       style: {
         color: '#fff',
