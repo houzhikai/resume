@@ -26,9 +26,11 @@ function Barrage() {
   useEffect(() => {
     const mocked = ['11', '22', '我是mock数据1', '我是mock数据2', '我是mock数据3', '我是mock数据4', '我是mock数据5', '我是mock数据6', '我是mock数据7', '我是mock数据8', '我是mock数据9', '我是mock数据10', '我是mock数据11', '我是mock数据12', '我是mock数据13',]
     if (isOpenBullet) {
-       mocked.map(item => {
-        return screen.push(item)
-      })
+      mocked.map(item => 
+        selectType === '仅内容' ?
+          screen.push(item) :
+          screen?.push(<StyledBullet head={headUrl} msg={item} size='normal' color="#000" />)
+      )
     }
   }, [screen, isOpenBullet])
   // 弹幕内容输入事件处理
