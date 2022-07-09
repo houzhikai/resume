@@ -20,13 +20,15 @@ function Barrage() {
   const [isOpenBullet, setIsOpenBullet] = useState<boolean>(false)
   // 默认的弹幕速度
   const [bulletSpeed, setBulletSpeed] = useState<number>(80)
+  // 弹幕循环次数
+  const [loopCount, setLoopCount] = useState<number | string>(1)
+
   useEffect(() => {
     // 给页面中某个元素初始化弹幕屏幕，一般为一个大区块。此处的配置项全局生效
     //  duration 滚动时长，数值越小滚动越快
-    console.log(bulletSpeed)
-    let value = new BulletScreen('.screen', { duration: (100 - bulletSpeed), loopCount: 'infinite' });
+    let value = new BulletScreen('.screen', { duration: (100 - bulletSpeed), loopCount });
     setScreen(value);
-  }, [bulletSpeed]);
+  }, [bulletSpeed, loopCount]);
   useEffect(() => {
     const mocked = ['11', '22', '我是mock数据1', '我是mock数据2', '我是mock数据3', '我是mock数据4', '我是mock数据5', '我是mock数据6', '我是mock数据7', '我是mock数据8', '我是mock数据9', '我是mock数据10', '我是mock数据11', '我是mock数据12', '我是mock数据13',]
     if (isOpenBullet) {
@@ -65,6 +67,9 @@ function Barrage() {
   const handleChangeBulletSpeed = (value: number) => {
     setBulletSpeed(value)
   }
+  const handleChangeLoopCount = (value: number|string) => {
+    setLoopCount(value)
+  }
 
   const describe = <div>
     <DescribeP>
@@ -80,7 +85,12 @@ function Barrage() {
         <div className="screen" style={{ width: '100%', overflowX: 'hidden', height: '360px' }}></div>
         <div className='workStation'>
           <OpenBullet handleToggleBullet={handleToggleBullet} />
-          <Setting handleChangeBulletSpeed={ handleChangeBulletSpeed } defaultSpeed={bulletSpeed} />
+          <Setting
+            handleChangeBulletSpeed={handleChangeBulletSpeed}
+            defaultSpeed={bulletSpeed}
+            times={loopCount}
+            handleChangeLoopCount={handleChangeLoopCount}
+          />
           <div>
             <input placeholder='请文明发言...' value={bullet} onChange={handleChange} />
             <button className='send' onClick={handleSend} >发送</button>
