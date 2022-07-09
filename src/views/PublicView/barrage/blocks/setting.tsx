@@ -2,7 +2,7 @@ import React from 'react';
 import { SettingOutlined } from '@ant-design/icons';
 import type { SliderMarks } from 'antd/lib/slider';
 import '../style/setting.scss'
-import { Button, Radio, Slider, Tooltip } from 'antd';
+import { Radio, Slider, Tooltip } from 'antd';
 interface Props {
   handleChangeBulletSpeed: (value: number) => void
   defaultSpeed: number
