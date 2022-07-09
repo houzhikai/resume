@@ -5,6 +5,7 @@ import CustomBreadcrumb from '../../../components/CustomBreadcrumb';
 import { DescribeP, DIV, KeyTag } from '../../../components/Div';
 import UseIntroduce from '../../../components/UseIntroduce';
 import DropdownButton from './blocks/dropdown';
+import OpenBullet from './blocks/openBullet';
 
 const headUrl = 'https://img.win3000.com/m00/64/3c/46d9f60ef87732950100c11587ac4421_c_345_458.jpg';
 function Barrage() {
@@ -14,12 +15,22 @@ function Barrage() {
   const [bullet, setBullet] = useState('');
   // 选择仅内容还是用户
   const [selectType, setSelectType] = useState('用户')
+  // 是否打开弹幕
+  const [isOpenBullet, setIsOpenBullet] = useState<boolean>(false)
   useEffect(() => {
     // 给页面中某个元素初始化弹幕屏幕，一般为一个大区块。此处的配置项全局生效
     //  duration 滚动时长，数值越小滚动越快
     let value = new BulletScreen('.screen', { duration: 10 });
     setScreen(value);
   }, []);
+  useEffect(() => {
+    const mocked = ['11', '22', '我是mock数据1', '我是mock数据2', '我是mock数据3', '我是mock数据4', '我是mock数据5', '我是mock数据6', '我是mock数据7', '我是mock数据8', '我是mock数据9', '我是mock数据10', '我是mock数据11', '我是mock数据12', '我是mock数据13',]
+    if (isOpenBullet) {
+       mocked.map(item => {
+        return screen.push(item)
+      })
+    }
+  }, [screen, isOpenBullet])
   // 弹幕内容输入事件处理
   const handleChange = ({target:{ value }}:any) => {
     setBullet(value);
@@ -43,6 +54,9 @@ function Barrage() {
   const getChildCount = (value: any) => {
     setSelectType(value)
   }
+  const handleToggleBullet = (value: boolean) => {
+    setIsOpenBullet(value)
+  }
   const describe = <div>
     <DescribeP>
       <DIV>1）暂无内容，将要写一个弹幕效果</DIV>
@@ -56,6 +70,7 @@ function Barrage() {
       <main>
         <div className="screen" style={{ width: '100%', overflowX: 'hidden', height: '360px' }}></div>
         <div className='workStation'>
+          <OpenBullet handleToggleBullet={ handleToggleBullet } />
           <div>
             <input placeholder='请文明发言...' value={bullet} onChange={handleChange} />
             <button className='send' onClick={handleSend} >发送</button>

@@ -16,7 +16,7 @@ export const FormWrapper = styled.div`
    padding: 10px; 
 `;
 // 使用备注的行样式
-export const DescribeP = styled.p`
+export const DescribeP = styled.div`
   margin-bottom: 10px;
 `;
 
