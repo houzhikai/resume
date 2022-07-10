@@ -1,5 +1,5 @@
 import React, { useState, useReducer } from 'react';
-import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { Layout } from 'antd';
 import menus from './menu';
 import routes from '../../routes';
@@ -21,28 +21,35 @@ const reducer = (state: any, action: any) => {
     }
 }
 const getMenu = (menu: any) => {
-    let newMenu,
-        auth = JSON.parse(localStorage.getItem('user') || '').auth
-    if (!auth) {
+    // let newMenu,
+    //     auth = JSON.parse(localStorage.getItem('user') as string).auth
+    // console.log(auth, "auth");
+    // if (!auth) {
         return menu
-    } else {
-        newMenu = menu.filter((res: any) => res.auth && res.auth.indexOf(auth) !== -1)
-        return newMenu
-    }
+    // } else {
+    //     newMenu = menu.filter((res: any) => res.auth && res.auth.indexOf(auth) !== -1)
+    //     return newMenu
+    // }
 }
 const Index: React.FC = (props) => {
     const [state, dispatch] = useReducer(reducer, { menuToggle: false })
-    const history = useHistory()
+    // const history = useHistory()
 
     const [menu] = useState(() => {
-        if (!localStorage.getItem('user')) {
-            history.push('/')
-            return []
-        } else {
+        // if (!localStorage.getItem('user')) {
+        //     history.push('/home')
+        //     console.log('/home');
+            
+        //     return []
+        // } else {
+            // console.log(getMenu(menus),"getMenu(menus)");
             return getMenu(menus)
-        }
+        // }
     })
-    let { auth } = JSON.parse(localStorage.getItem('user') || '') ?? ""
+
+    console.log(menu,"menu")
+    let { auth } = JSON.parse(localStorage.getItem('user') as string) || ""
+    
     const handleMenuClick = () => {
         dispatch({ type: 'menuToggle' })
     }

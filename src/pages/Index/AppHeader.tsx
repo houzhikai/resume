@@ -33,7 +33,7 @@ const AppHeader = (props: any) => {
   const [username, setUsername] = useState('测试名字');
   let { menuClick, menuToggle } = props;
   useEffect(() => {
-    const name = JSON.parse(window.localStorage.getItem('name') || '');
+    const name = JSON.parse(window.localStorage.getItem('name') as string);
     setUsername(name);
   }, [username]);
 

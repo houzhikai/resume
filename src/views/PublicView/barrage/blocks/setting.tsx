@@ -30,21 +30,20 @@ function Setting(props: Props) {
       label: <strong>最快</strong>,
     },
   };
-  const content =(
-    <div  className='tooltip'>
-      <div className='speed'>
-        <div className='bulletLabel'>弹幕速度</div>
-        <Slider marks={marks} defaultValue={defaultSpeed} onChange={handleChange} />
+    const content = (
+      <div className='tooltip'>
+        <div className='speed'>
+          <div className='bulletLabel'>弹幕速度</div>
+          <Slider marks={marks} defaultValue={defaultSpeed} onChange={handleChange} /></div>
+        <div className='loopCount'>
+          <div>循环次数</div>
+          <Radio.Group onChange={onChangeLoopCount} value={times}>
+            <Radio className='loopLabel' value={1}>一次</Radio>
+            <Radio className='loopLabel' value="infinite">无数次</Radio>
+          </Radio.Group>
+        </div>
       </div>
-      <div className='loopCount'>
-        <div>循环次数</div> 
-        <Radio.Group  onChange={onChangeLoopCount} value={times}>
-          <Radio className='loopLabel' value={1}>一次</Radio>
-          <Radio className='loopLabel' value="infinite">无数次</Radio>
-        </Radio.Group>
-      </div>
-    </div>
-  );
+    );
 
   return (
     <div className='wrapper'>

@@ -30,7 +30,7 @@ function Barrage() {
     setScreen(value);
   }, [bulletSpeed, loopCount]);
   useEffect(() => {
-    const mocked = ['11', '22', '我是mock数据1', '我是mock数据2', '我是mock数据3', '我是mock数据4', '我是mock数据5', '我是mock数据6', '我是mock数据7', '我是mock数据8', '我是mock数据9', '我是mock数据10', '我是mock数据11', '我是mock数据12', '我是mock数据13',]
+    const mocked = ['11', '22', '我是mock数据1', '我是mock数据2', '我是mock数据3', '我是mock数据4', '我是mock数据5', '我是mock数据6', '我是mock数据7', '我是mock数据8', '我是mock数据9', '我是mock数据10', '我是mock数据11', '我是mock数据12', '我是mock数据13']
     if (isOpenBullet) {
       mocked.map(item => 
         selectType === '仅内容' ?
@@ -74,7 +74,10 @@ function Barrage() {
   const describe = <div>
     <DescribeP>
       <DIV>1）暂无内容，将要写一个弹幕效果</DIV>
-      <DIV>2) 将要实现的功能： <KeyTag>选择 用户或者 仅内容，展示不同的弹幕类型</KeyTag></DIV>
+      <DIV>2) 将要实现的功能：
+        ①<KeyTag>选择 用户或者 仅内容，展示不同的弹幕类型</KeyTag>
+        ②<KeyTag>关闭弹幕开关， 没有关闭弹幕</KeyTag>
+      </DIV>
     </DescribeP>
   </div>;
   return (
