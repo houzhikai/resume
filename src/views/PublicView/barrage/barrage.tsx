@@ -22,11 +22,13 @@ function Barrage() {
   const [bulletSpeed, setBulletSpeed] = useState<number>(80)
   // 弹幕循环次数
   const [loopCount, setLoopCount] = useState<number | string>(1)
+  // 弹幕颜色
+  const [color, setColor] = useState('black')
 
   useEffect(() => {
     // 给页面中某个元素初始化弹幕屏幕，一般为一个大区块。此处的配置项全局生效
     //  duration 滚动时长，数值越小滚动越快
-    let value = new BulletScreen('.screen', { duration: (100 - bulletSpeed), loopCount });
+    let value = new BulletScreen('.screen', { duration: (100 - bulletSpeed), loopCount,  });
     setScreen(value);
   }, [bulletSpeed, loopCount]);
   useEffect(() => {
@@ -70,7 +72,9 @@ function Barrage() {
   const handleChangeLoopCount = (value: number|string) => {
     setLoopCount(value)
   }
-
+  const handleSelectColor = (value: string) => {
+    setColor(value)
+  }
   const describe = <div>
     <DescribeP>
       <DIV>1）暂无内容，将要写一个弹幕效果</DIV>
@@ -85,7 +89,7 @@ function Barrage() {
       <CustomBreadcrumb arr={['通用', '弹幕']} />
       <UseIntroduce describe={describe} />
       <main>
-        <div className="screen" style={{ width: '100%', overflowX: 'hidden', height: '360px' }}></div>
+        <div className="screen" style={{ width: '100%', overflowX: 'hidden', height: '360px', color, fontSize: 20, fontWeight: 700 }}></div>
         <div className='workStation'>
           <OpenBullet handleToggleBullet={handleToggleBullet} />
           <Setting
@@ -93,6 +97,7 @@ function Barrage() {
             defaultSpeed={bulletSpeed}
             times={loopCount}
             handleChangeLoopCount={handleChangeLoopCount}
+            onSelectColor={handleSelectColor}
           />
           <div>
             <input placeholder='请文明发言...' value={bullet} onChange={handleChange} />
