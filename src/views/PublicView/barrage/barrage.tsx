@@ -28,7 +28,7 @@ function Barrage() {
   useEffect(() => {
     // 给页面中某个元素初始化弹幕屏幕，一般为一个大区块。此处的配置项全局生效
     //  duration 滚动时长，数值越小滚动越快
-    let value = new BulletScreen('.screen', { duration: (100 - bulletSpeed), loopCount,  });
+    let value = new BulletScreen('.screen', { duration: (100 - bulletSpeed), loopCount, trackHeight: 30 });
     setScreen(value);
   }, [bulletSpeed, loopCount]);
   useEffect(() => {

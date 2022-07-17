@@ -47,7 +47,6 @@ const Index: React.FC = (props) => {
         // }
     })
 
-    console.log(menu,"menu")
     let { auth } = JSON.parse(localStorage.getItem('user') as string) || ""
     
     const handleMenuClick = () => {

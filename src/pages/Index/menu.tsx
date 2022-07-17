@@ -15,6 +15,7 @@ const menu = [
             { title: '复制', key: '/public/myCopy', icon: '' },
             { title: '上传', key: '/public/upload', icon: '' },
             { title: '弹幕', key: '/public/barrage', icon: '' },
+            { title: '互动', key: '/public/interactive', icon: '' },
         ]
     },
     {
