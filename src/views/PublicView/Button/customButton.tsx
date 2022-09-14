@@ -4,6 +4,7 @@ import { DescribeP, FormWrapper, KeyTag } from '../../../components/Div';
 import MyCopy from '../../../components/myCopy';
 import CustomBreadcrumb from '../../../components/CustomBreadcrumb';
 import UseIntroduce from '../../../components/UseIntroduce';
+import Test from './test';
 
 function CustomButton() {
   const describe = <div>
@@ -35,6 +36,11 @@ function CustomButton() {
         <Form.Item label="复制组件3">
           <MyCopy label="这是我复制的内容113333" />
         </Form.Item>
+        <Form.Item label="测试组件">
+          <Test />
+        </Form.Item>
+        
+
       </FormWrapper>
     </>
 

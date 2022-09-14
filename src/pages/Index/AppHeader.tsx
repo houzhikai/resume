@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
+  border: 1px solid #ccc ;
 `;
 const HeaderRight = styled.div`
   display: flex;

@@ -7,7 +7,7 @@ function Interactive() {
   
   const describe = (
     <DescribeP>
-      <DIV><a>https://codepen.io/lilyH/pen/RwMLLO </a> css 实现上下滚动效果</DIV>
+      {/* <DIV><a>https://codepen.io/lilyH/pen/RwMLLO </a> css 实现上下滚动效果</DIV> */}
       <DIV>1）暂无内容，将要写一个从上到下弹幕互动的效果</DIV>
       <DIV>2) 将要实现的功能：
         ①<KeyTag>选择 用户或者 仅内容，展示不同的弹幕类型</KeyTag>
@@ -20,6 +20,9 @@ function Interactive() {
     <>
       <CustomBreadcrumb arr={['通用', '互动']} />
       <UseIntroduce describe={describe} />
+      <div>
+        111
+      </div>
     </>
   );
 }
