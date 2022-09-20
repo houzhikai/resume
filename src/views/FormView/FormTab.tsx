@@ -8,6 +8,7 @@ const FormLayout = () => {
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState("horizontal");
 
+  // 切换 formLayout 清空 input
   useEffect(() => {
     form.setFieldsValue({
       layout: formLayout ?? "horizontal",

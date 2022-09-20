@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image, Form, Input, Button, Checkbox, message } from 'antd';
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
@@ -28,9 +28,33 @@ const Title = styled.div`
   margin-top: 120px;
   margin-bottom: 60px;
 `;
+const CodeWrapper = styled.div`
+  display: flex;
+`
 const Login = () => {
   const [checkValue, setCheckValue] = useState(false);
+  // 密码登录为 true，验证码为false
+  const [loginWay, setLoginWay] = useState(true)
+  const [time, setTime] = useState(60)
+  const [isLoading, setIsLoading] = useState(false)
+
   const history = useHistory();
+
+  useEffect(() => {
+    if (isLoading) {
+      let timer = setInterval(() => {
+        if (time > 0) {
+          setTime((c: number) => c - 1)
+        } else {
+          setIsLoading(false)
+          setTime(60)
+        }
+      }, 1000)
+      return () => clearInterval(timer)
+    }
+  }, [time, isLoading])
+
+
 
   const onFinish = (values: { username: string, password: string; }) => {
     if (values.username !== 'admin' || values.password !== '123456') {
@@ -48,6 +72,14 @@ const Login = () => {
   const onCheckValue = (e: any) => {
     setCheckValue(e.target.checked);
   };
+  // 切换登录方式
+  const toggleLoginWays = () => {
+    setLoginWay(c => !c)
+  }
+
+  const handleCountdown = () => {
+    setIsLoading(!isLoading)
+  }
 
   return (
     <Wrapper>
@@ -65,21 +97,52 @@ const Login = () => {
           onFinishFailed={onFinishFailed}
           autoComplete="off"
         >
-          <Form.Item
-            label="用户名"
-            name="username"
-            rules={[{ required: true, message: '请输入用户名!' }]}
-          >
-            <Input />
-          </Form.Item>
 
-          <Form.Item
-            label="密码"
-            name="password"
-            rules={[{ required: true, message: '请输入密码!' }]}
-          >
-            <Input.Password visibilityToggle={false} />
-          </Form.Item>
+          {
+            loginWay ? (<>
+              <Form.Item
+                label="用户名"
+                name="username"
+                rules={[{ required: true, message: '请输入用户名!' }]}
+              >
+                <Input />
+              </Form.Item>
+
+              <Form.Item
+                label="密码"
+                name="password"
+                rules={[{ required: true, message: '请输入密码!' }]}
+              >
+                <Input.Password visibilityToggle={false} />
+              </Form.Item>
+            </>) : (<>
+              <Form.Item
+                label="手机号"
+                name="phone"
+                rules={[{
+                  required: true,
+                  pattern: /^(?:(?:\+|00)86)?1(?:(?:3[\d])|(?:4[5-79])|(?:5[0-35-9])|(?:6[5-7])|(?:7[0-8])|(?:8[\d])|(?:9[189]))\d{8}$/,
+                  message: '请输入正确的手机号'
+                }]}
+              >
+                <Input />
+              </Form.Item>
+
+              <Form.Item
+                label="验证码"
+                name="code"
+                rules={[{ required: true, message: '请输入验证码' }]}
+              >
+                <CodeWrapper>
+                  <Input />
+                  <Button type='primary' onClick={handleCountdown} disabled={isLoading}>
+                    <div style={{ width: 80 }}> {isLoading ? `${time}s` : '获取验证码'}</div>
+                  </Button>
+                </CodeWrapper>
+              </Form.Item>
+
+            </>)
+          }
 
           <Form.Item name="reading" style={{ margin: ' 0 0 0 64px' }} >
             <Checkbox value={checkValue} onChange={onCheckValue}>
@@ -89,6 +152,10 @@ const Login = () => {
 
           <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 4, span: 16 }}>
             <Checkbox>记住密码？</Checkbox>
+          </Form.Item>
+
+          <Form.Item name="button" wrapperCol={{ offset: 16 }}>
+            <Button type='link' onClick={toggleLoginWays}>{loginWay ? '切换验证码登录' : '切换密码登录'}</Button>
           </Form.Item>
 
           <Form.Item wrapperCol={{ offset: 8, span: 16 }}>

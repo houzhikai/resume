@@ -9,7 +9,7 @@ import OpenBullet from './blocks/openBullet';
 import Setting from './blocks/setting';
 
 const headUrl = 'https://img.win3000.com/m00/64/3c/46d9f60ef87732950100c11587ac4421_c_345_458.jpg';
-function Barrage() {
+const Barrage = () => {
   // 弹幕屏幕
   const [screen, setScreen] = useState<any>(null);
   // 弹幕内容
@@ -31,10 +31,11 @@ function Barrage() {
     let value = new BulletScreen('.screen', { duration: (100 - bulletSpeed), loopCount, trackHeight: 30 });
     setScreen(value);
   }, [bulletSpeed, loopCount]);
+
   useEffect(() => {
     const mocked = ['11', '22', '我是mock数据1', '我是mock数据2', '我是mock数据3', '我是mock数据4', '我是mock数据5', '我是mock数据6', '我是mock数据7', '我是mock数据8', '我是mock数据9', '我是mock数据10', '我是mock数据11', '我是mock数据12', '我是mock数据13']
     if (isOpenBullet) {
-      mocked.map(item => 
+      mocked.map(item =>
         selectType === '仅内容' ?
           screen.push(item) :
           screen?.push(<StyledBullet head={headUrl} msg={item} size='normal' color="#000" />)
@@ -42,7 +43,7 @@ function Barrage() {
     }
   }, [screen, isOpenBullet, selectType])
   // 弹幕内容输入事件处理
-  const handleChange = ({target:{ value }}:any) => {
+  const handleChange = ({ target: { value } }: any) => {
     setBullet(value);
   };
   // 发送弹幕
@@ -52,8 +53,8 @@ function Barrage() {
         return;
       }
       if (selectType === '仅内容') {
-       screen.push(<div className='bulletWord'>{ bullet }</div>);
-       setBullet('')
+        screen.push(<div className='bulletWord'>{bullet}</div>);
+        setBullet('')
       } else if (selectType === '用户') {
         screen?.push(<StyledBullet head={headUrl} msg={bullet} size='normal' color="#000" />);
         setBullet('')
@@ -69,7 +70,7 @@ function Barrage() {
   const handleChangeBulletSpeed = (value: number) => {
     setBulletSpeed(value)
   }
-  const handleChangeLoopCount = (value: number|string) => {
+  const handleChangeLoopCount = (value: number | string) => {
     setLoopCount(value)
   }
   const handleSelectColor = (value: string) => {
