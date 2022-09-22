@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Image, Form, Input, Button, Checkbox, message } from 'antd';
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
