@@ -2,6 +2,7 @@ import React from 'react';
 import CustomBreadcrumb from '../../../components/CustomBreadcrumb';
 import { DescribeP, DIV, KeyTag } from '../../../components/Div';
 import UseIntroduce from '../../../components/UseIntroduce';
+import Echarts from './components/echarts';
 import Header from './components/header';
 
 const Charts = () => {
@@ -19,6 +20,7 @@ const Charts = () => {
       <CustomBreadcrumb arr={['通用', '图表']} />
       <UseIntroduce describe={describe} />
       <Header />
+      <Echarts />
     </div>
   );
 }

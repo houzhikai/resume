@@ -25,7 +25,7 @@ const getMenu = (menu: any) => {
     //     auth = JSON.parse(localStorage.getItem('user') as string).auth
     // console.log(auth, "auth");
     // if (!auth) {
-        return menu
+    return menu
     // } else {
     //     newMenu = menu.filter((res: any) => res.auth && res.auth.indexOf(auth) !== -1)
     //     return newMenu
@@ -39,16 +39,16 @@ const Index: React.FC = (props) => {
         // if (!localStorage.getItem('user')) {
         //     history.push('/home')
         //     console.log('/home');
-            
+
         //     return []
         // } else {
-            // console.log(getMenu(menus),"getMenu(menus)");
-            return getMenu(menus)
+        // console.log(getMenu(menus),"getMenu(menus)");
+        return getMenu(menus)
         // }
     })
 
     let { auth } = JSON.parse(localStorage.getItem('user') as string) || ""
-    
+
     const handleMenuClick = () => {
         dispatch({ type: 'menuToggle' })
     }
@@ -73,7 +73,7 @@ const Index: React.FC = (props) => {
                                                 <item.component {...props} />
                                             ) : (
                                                 // 这里也可以跳转到 403 页面
-                                                <Redirect to='/404' {...props} />
+                                                <Redirect from='*' to='/404' {...props} />
                                             )
                                         }
                                     />
