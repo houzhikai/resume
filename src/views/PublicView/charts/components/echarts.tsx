@@ -21,7 +21,7 @@ const Echarts = () => {
       },
       legend: {
         data: [{ name: '预算', icon: 'rect' }, { name: '利润', icon: 'rect' }],
-        left: '75%'
+        left: '85%'
       },
       toolbox: {
         show: false,
