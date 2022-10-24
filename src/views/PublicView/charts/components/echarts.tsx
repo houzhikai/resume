@@ -80,12 +80,12 @@ const Echarts = () => {
         },
       ]
     })
-  }, [])
+  })
 
 
   return (
     <>
-      <div id='echart' style={{ width: '88%', height: '400px' }}></div>
+      <div id='echart' style={{ width: '88%', height: '360px' }}></div>
     </>
   );
 }

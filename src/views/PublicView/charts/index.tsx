@@ -3,6 +3,7 @@ import CustomBreadcrumb from '../../../components/CustomBreadcrumb';
 import { DescribeP, DIV, KeyTag } from '../../../components/Div';
 import UseIntroduce from '../../../components/UseIntroduce';
 import Echarts from './components/echarts';
+import Footer from './components/footer';
 import Header from './components/header';
 
 const Charts = () => {
@@ -23,6 +24,7 @@ const Charts = () => {
       <UseIntroduce describe={describe} />
       <Header />
       <Echarts />
+      <Footer />
     </div>
   );
 }
