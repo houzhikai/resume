@@ -1,6 +1,6 @@
 import React from 'react';
 import CustomBreadcrumb from '../../../components/CustomBreadcrumb';
-import { DescribeP, DIV, KeyTag } from '../../../components/Div';
+import { DescribeP, DIV } from '../../../components/Div';
 import UseIntroduce from '../../../components/UseIntroduce';
 import Echarts from './components/echarts';
 import Header from './components/header';
@@ -14,7 +14,8 @@ const Charts = () => {
         ②<KeyTag>关闭弹幕开关， 没有关闭弹幕</KeyTag> */}
       </DIV>
     </DescribeP>
-  </div>; return (
+  </div>;
+  return (
     <div>
       <h1>Echarts图表</h1>
       <CustomBreadcrumb arr={['通用', '图表']} />

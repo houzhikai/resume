@@ -36,10 +36,10 @@ function CustomButton() {
         <Form.Item label="复制组件3">
           <MyCopy label="这是我复制的内容113333" />
         </Form.Item>
-        <Form.Item label="测试组件">
-          <Test />
-        </Form.Item>
-        
+        {/* <Form.Item label="测试组件"> */}
+        <Test />
+        {/* </Form.Item> */}
+
 
       </FormWrapper>
     </>

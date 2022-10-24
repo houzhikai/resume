@@ -19,4 +19,7 @@ export const FormWrapper = styled.div`
 export const DescribeP = styled.div`
   margin-bottom: 10px;
 `;
+export const Space = styled.div`
+  height: 48px;
+`
 

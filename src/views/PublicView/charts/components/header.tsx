@@ -5,6 +5,7 @@ import IconFont from '../../../../components/IconFont';
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 24px;
 `
 const CardBody = styled.div`
   display: flex;

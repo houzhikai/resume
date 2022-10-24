@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-    HashRouter as Router,
-    Switch,
-    Route,
-    Redirect,
+  HashRouter as Router,
+  Switch,
+  Route,
+  Redirect,
 } from "react-router-dom";
 import Index from './pages/Index'
 import Login from './views/Login/index';
@@ -18,14 +18,14 @@ const Wrapper = styled.div`
 function App() {
   return (
     <Wrapper>
-    <Router>
-      <Switch>
+      <Router>
+        <Switch>
           <Route exact path="/login" component={Login} />
           <Route exact path="/" render={() => <Redirect to="/login" />} />
           <Route component={Index} />
-        <Route exact path="*" component={NoMatch} />
-      </Switch>
-    </Router>
+          <Route exact path="*" component={NoMatch} />
+        </Switch>
+      </Router>
     </Wrapper>
   );
 }
