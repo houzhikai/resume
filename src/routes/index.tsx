@@ -5,6 +5,7 @@ import UploadView from "../views/PublicView/Upload";
 import Barrage from '../views/PublicView/barrage/barrage'
 import Interactive from '../views/PublicView/interactive/interactive'
 import Charts from '../views/PublicView/charts'
+import Rolling from '../views/PublicView/Rolling/Rolling'
 import FormLayout from "../views/FormView/FormTab";
 import FormAddSubtractFields from "../views/FormView/FormAddSubtractFields";
 import AboutUs from "../views/About/AboutUs";
@@ -25,6 +26,7 @@ const routes: any = [
   { path: '/public/barrage', exact: true, name: '弹幕', component: Barrage, auth: [1] },
   { path: '/public/interactive', exact: true, name: '互动', component: Interactive, auth: [1] },
   { path: '/public/charts', exact: true, name: '图表', component: Charts, auth: [1] },
+  { path: '/public/rolling', exact: true, name: '滚动', component: Rolling, auth: [1] },
   { path: '/form/tab', exact: true, name: 'form切换', component: FormLayout, auth: [1] },
   { path: '/form/embedded', exact: true, name: '动态增减嵌套字段', component: FormAddSubtractFields, auth: [1] },
   { path: '/form/calculate', exact: true, name: '自动计算百分比', component: FormCalculate, auth: [1] },

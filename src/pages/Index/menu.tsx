@@ -17,6 +17,7 @@ const menu = [
             { title: '弹幕', key: '/public/barrage', icon: '' },
             { title: '互动', key: '/public/interactive', icon: '' },
             { title: '图表', key: '/public/charts', icon: '' },
+            { title: '滚动', key: '/public/rolling', icon: '' },
         ]
     },
     {
