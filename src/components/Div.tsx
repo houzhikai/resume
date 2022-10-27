@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const DIV = styled.div`
-  margin-bottom: 20px;
-`;
+margin-left: 36px;
+  margin-top: 10px;`;
 // 标注关键字
 export const KeyTag = styled.span`
   color: #f60;
@@ -20,6 +20,7 @@ export const DescribeP = styled.div`
   margin-bottom: 10px;
 `;
 export const Space = styled.div`
-  height: 48px;
+  margin-left: 36px;
+  margin-top: 10px;
 `
 

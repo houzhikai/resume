@@ -11,8 +11,11 @@ const Typography: React.FC = () => {
     <DescribeP>
       <DIV>1）要实现一个文字排版的效果</DIV>
       <DIV>2) 已经实现的功能：
-        ①多行文字<KeyTag>展开/收起</KeyTag>的功能，antd 中只有<KeyTag>展开</KeyTag>功能，不支持<KeyTag>收起</KeyTag>
-        ②<KeyTag>中间文字省略，用。。。代替</KeyTag>
+        <DIV> 1、多行文字<KeyTag>展开/收起</KeyTag>的功能，antd 中只有<KeyTag>展开</KeyTag>功能，不支持<KeyTag>收起</KeyTag> </DIV>
+        <DIV> 2、省略中间文字，用。。。代替。自定义添加了<KeyTag>3个api</KeyTag> </DIV>
+        <DIV>suffixCount：末尾留的字符长度，默认为12</DIV>
+        <DIV>isShow：是否展示提示，默认为false</DIV>
+        <DIV>label：文字内容，<KeyTag>必填</KeyTag></DIV>
       </DIV>
     </DescribeP>
   )
