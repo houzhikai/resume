@@ -3,11 +3,7 @@ import { Typography } from 'antd';
 
 const { Paragraph } = Typography;
 
-interface Props {
-  rows: number
-}
-
-const ShowOrClose: React.FC<Props> = ({ rows = 3 }) => {
+const ShowOrClose = () => {
   const [visible, setVisible] = useState<boolean>(false);  //是否展开
 
   return (
@@ -17,7 +13,7 @@ const ShowOrClose: React.FC<Props> = ({ rows = 3 }) => {
         ellipsis={
           visible ? false
             : {
-              rows: rows, // rows 的值要 +1 才对，比如 rows = 3，展示2行
+              rows: 3, // rows 的值要 +1 才对，比如 rows = 3，展示2行
               expandable: true,
               symbol: <span onClick={(e) => {
                 e.stopPropagation(); //防止当前事件在捕获和冒泡阶段的进一步传播,但不会阻止任何默认行为的发生

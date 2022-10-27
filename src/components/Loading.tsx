@@ -1,9 +1,10 @@
 import { Spin } from 'antd';
-import './styles/loading.scss'
+import './styles/loading.scss';
 import { LoadingOutlined } from '@ant-design/icons';
+import React from 'react';
 
 const Loading = () => {
-  const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
+  const antIcon = <LoadingOutlined style={{ fontSize: 12 }} spin />;
 
   return (
     <div className="wrapper">
