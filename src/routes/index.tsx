@@ -21,7 +21,7 @@ import TransformRotate from '../views/Transform/TransformRotate/TransformRotate'
 
 const routes: any = [
   { path: '/home', exact: true, name: '首页', component: Home, auth: [1] },
-  { path: '/public/button', exact: true, name: '图标', component: ButtonView, auth: [1] },
+  { path: '/public/button', exact: true, name: '按钮', component: ButtonView, auth: [1] },
   { path: '/public/myCopy', exact: true, name: '复制', component: CustomerButton, auth: [1] },
   { path: '/public/upload', exact: true, name: '上传', component: UploadView, auth: [1] },
   { path: '/public/barrage', exact: true, name: '弹幕', component: Barrage, auth: [1] },
@@ -36,7 +36,7 @@ const routes: any = [
   { path: '/form/base', exact: true, name: '基本表单', component: FormBaseView, auth: [1] },
   { path: '/tabs/tab', exact: true, name: '最基本的表格', component: BaseTab, auth: [1] },
   { path: '/tabs/searchTable', exact: true, name: '搜索表单', component: SearchTable, auth: [1] },
-  { path: '/transform/zoom', exact: true, name: '旋转', component: TransformZoom, auth: [1] },
+  { path: '/transform/zoom', exact: true, name: '缩放', component: TransformZoom, auth: [1] },
   { path: '/transform/rotate', exact: true, name: '旋转', component: TransformRotate, auth: [1] },
   { path: '/about', exact: true, name: '关于我们', component: AboutUs, auth: [1] },
 ];
