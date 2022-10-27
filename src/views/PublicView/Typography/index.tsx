@@ -1,13 +1,12 @@
 import React from 'react';
+import { Divider } from 'antd';
 import CustomBreadcrumb from '../../../components/CustomBreadcrumb';
 import { DescribeP, DIV, KeyTag } from '../../../components/Div';
 import UseIntroduce from '../../../components/UseIntroduce';
 
-const Rolling = () => {
-
+const ShowOrClose: React.FC = () => {
   const describe = (
     <DescribeP>
-      {/* <DIV><a>https://codepen.io/lilyH/pen/RwMLLO </a> css 实现上下滚动效果</DIV> */}
       <DIV>1）暂无内容，将要写一个从上到下弹幕互动的效果</DIV>
       <DIV>2) 将要实现的功能：
         ①<KeyTag>选择 用户或者 仅内容，展示不同的弹幕类型</KeyTag>
@@ -18,13 +17,13 @@ const Rolling = () => {
 
   return (
     <>
-      <CustomBreadcrumb arr={['通用', '滚动']} />
+      <CustomBreadcrumb arr={['通用', '展开/收起']} />
       <UseIntroduce describe={describe} />
-      <div>
-        滚动
-      </div>
+
+      <Divider plain>展开/收起</Divider>
+      <ShowOrClose />
     </>
   );
 }
 
-export default Rolling;
+export default ShowOrClose;

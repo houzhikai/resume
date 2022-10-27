@@ -18,7 +18,7 @@ const menu = [
             { title: '互动', key: '/public/interactive', icon: '' },
             { title: '图表', key: '/public/charts', icon: '' },
             { title: '滚动', key: '/public/rolling', icon: '' },
-            { title: '排版', key: '/public/typography', icon: '' },
+            { title: '展/收', key: '/public/showOrClose', icon: '' },
         ]
     },
     {

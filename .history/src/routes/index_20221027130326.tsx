@@ -6,7 +6,7 @@ import Barrage from '../views/PublicView/barrage/barrage'
 import Interactive from '../views/PublicView/interactive/interactive'
 import Charts from '../views/PublicView/charts'
 import Rolling from '../views/PublicView/Rolling/Rolling'
-import Typography from '../views/PublicView/Typography'
+import ShowOrClose from '../views/PublicView/ShowOrClose'
 import FormLayout from "../views/FormView/FormTab";
 import FormAddSubtractFields from "../views/FormView/FormAddSubtractFields";
 import AboutUs from "../views/About/AboutUs";
@@ -28,7 +28,7 @@ const routes: any = [
   { path: '/public/interactive', exact: true, name: '互动', component: Interactive, auth: [1] },
   { path: '/public/charts', exact: true, name: '图表', component: Charts, auth: [1] },
   { path: '/public/rolling', exact: true, name: '滚动', component: Rolling, auth: [1] },
-  { path: '/public/typography', exact: true, name: '排版', component: Typography, auth: [1] },
+  { path: '/public/showOrClose', exact: true, name: '展/收', component: ShowOrClose, auth: [1] },
   { path: '/form/tab', exact: true, name: 'form切换', component: FormLayout, auth: [1] },
   { path: '/form/embedded', exact: true, name: '动态增减嵌套字段', component: FormAddSubtractFields, auth: [1] },
   { path: '/form/calculate', exact: true, name: '自动计算百分比', component: FormCalculate, auth: [1] },
