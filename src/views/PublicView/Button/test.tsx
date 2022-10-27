@@ -116,11 +116,11 @@ const demo = () => {
     <div className="title">
       {word.map(item => {
         return (
-          <div >
-            <div>{item.title}</div>
+          <div key={item.title}>
+            <div key={item.title}>{item.title}</div>
             {
               item.product.map(p => {
-                return <div>{p}</div>
+                return <div key={p}>{p}</div>
               })
             }
           </div>
