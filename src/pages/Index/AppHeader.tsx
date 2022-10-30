@@ -29,6 +29,13 @@ const Username = styled.div`
   font-family: 'source-code-pro', 'Menlo', 'Monaco', 'Consolas', 'Courier New', 'monospace';
 `;
 
+interface MenuProps {
+  key?: string,
+  icon?: any,
+  label?: any,
+  disabled?: boolean,
+  type?: string,
+}
 const AppHeader = (props: any) => {
   const [visible, setVisible] = useState(false);
   const [username, setUsername] = useState('测试名字');
@@ -55,27 +62,36 @@ const AppHeader = (props: any) => {
   const handleExit = () => {
     history.push('/login');
   };
-
+  const menuItems: MenuProps[] = [
+    {
+      key: '1',
+      label: <div>用户设置</div>,
+      icon: '',
+      disabled: true,
+    },
+    {
+      type: 'divider'
+    },
+    {
+      key: '2',
+      label: <div onClick={() => setVisible(true)}>个人设置</div>,
+      icon: <IconFont type='icon-edit' />,
+    },
+    {
+      key: '3',
+      label: <div onClick={handleClick}>系统设置</div>,
+      icon: <IconFont type='icon-settings' />
+    },
+    {
+      key: '4',
+      label: <Popconfirm title="确定退出登录?" cancelText='取消' okText="确定" onConfirm={() => handleExit()}>
+        <MenuItem >退出登录</MenuItem>
+      </Popconfirm>,
+      icon: <IconFont type='icon-tuichu' />
+    }
+  ]
   const menu = (
-    <Menu>
-      <Menu.ItemGroup title='用户设置'>
-        <Menu.Divider />
-        <Menu.Item key='1' onClick={() => setVisible(true)}>
-          <IconFont type='icon-edit' />
-          <MenuItem >个人设置</MenuItem>
-        </Menu.Item>
-        <Menu.Item key='2' onClick={handleClick}>
-          <IconFont type='icon-settings' />
-          <MenuItem >系统设置</MenuItem>
-        </Menu.Item>
-        <Menu.Item key='3'>
-          <IconFont type='icon-tuichu' />
-          <Popconfirm title="确定退出登录?" cancelText='取消' okText="确定" onConfirm={() => handleExit()}>
-            <MenuItem >退出登录</MenuItem>
-          </Popconfirm>
-        </Menu.Item>
-      </Menu.ItemGroup>
-    </Menu>
+    <Menu items={menuItems} />
   );
   return (
     <Wrapper>

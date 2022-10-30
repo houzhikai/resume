@@ -53,14 +53,26 @@ const CustomMenu = (props: CustomMenuProps) => {
         });
     };
 
-    const renderMenuItem = ({ key, icon, title }: any) => (
-        <Menu.Item key={key}>
-            <Link to={key}>
-                {icon && <IconFont type={icon} />}
-                <span>{title}</span>
+    const renderMenuItem = (item: { key: string, title: string, icon: string }) =>
+        // <Menu key={item.key}
+        //     theme='dark'
+        //     style={{ marginLeft: 10 }}
+        //     items={[
+        //         {
+        //             key: item.key,
+        //             label: <Link to={item.key}>
+        //                 <span> {item.title}</span>
+        //             </Link>,
+        //             icon: item.icon !== '' ? <IconFont type={item.icon} /> : <div></div>
+        //         }
+        //     ]} />
+        <Menu.Item key={item.key} >
+            <Link to={item.key}>
+                {item.icon && <IconFont type={item.icon} />}
+                <span>{item.title}</span>
             </Link>
-        </Menu.Item>
-    );
+        </Menu.Item >
+
     // 遍历子项 subs
     const renderSubMenu = ({ key, icon, title, subs }: any) => {
         return (
