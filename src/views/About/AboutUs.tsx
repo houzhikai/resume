@@ -6,7 +6,7 @@ function AboutUs() {
   return (
     <>
       <CustomBreadcrumb arr={['关于我们']} />
-      <UseIntroduce describe='没有更多的介绍，敬请期待以后的更新。。。。。。。。' />
+      <UseIntroduce describe='本人很懒，没有更多的介绍，敬请期待以后的更新。。。。。。。。' />
 
     </>
   );

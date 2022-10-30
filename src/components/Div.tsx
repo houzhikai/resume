@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const DIV = styled.div`
-margin-left: 36px;
+  margin-left: 36px;
   margin-top: 10px;`;
 // 标注关键字
 export const KeyTag = styled.span`
@@ -20,7 +20,6 @@ export const DescribeP = styled.div`
   margin-bottom: 10px;
 `;
 export const Space = styled.div`
-  margin-left: 36px;
-  margin-top: 10px;
+  height: 30px;
 `
 

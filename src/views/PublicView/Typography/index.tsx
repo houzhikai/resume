@@ -1,24 +1,30 @@
 import React from 'react';
 import { Divider } from 'antd';
 import CustomBreadcrumb from '../../../components/CustomBreadcrumb';
-import { DescribeP, DIV, KeyTag } from '../../../components/Div';
+import { DescribeP, DIV, KeyTag, Space } from '../../../components/Div';
 import UseIntroduce from '../../../components/UseIntroduce';
 import ShowOrClose from './ShowOrClose';
 import EllipsisMiddle from './EllipsisMiddle';
+import DialogMessage from './DialogMessage';
 
 const Typography: React.FC = () => {
   const describe = (
     <DescribeP>
       <DIV>1）要实现一个文字排版的效果</DIV>
       <DIV>2) 已经实现的功能：
-        <DIV> 1、多行文字<KeyTag>展开/收起</KeyTag>的功能，antd 中只有<KeyTag>展开</KeyTag>功能，不支持<KeyTag>收起</KeyTag> </DIV>
-        <DIV> 2、省略中间文字，用。。。代替。自定义添加了<KeyTag>3个api</KeyTag> </DIV>
-        <DIV>suffixCount：末尾留的字符长度，默认为12</DIV>
-        <DIV>isShow：是否展示提示，默认为false</DIV>
-        <DIV>label：文字内容，<KeyTag>必填</KeyTag></DIV>
+        <DIV> 一、多行文字<KeyTag>展开/收起</KeyTag>的功能，antd 中只有<KeyTag>展开</KeyTag>功能，不支持<KeyTag>收起</KeyTag>
+          <DIV> 1、label 展示文字，默认空字符串</DIV>
+          <DIV> 2、rows 默认展示行数，默认 rows=2</DIV>
+        </DIV>
+        <DIV> 二、省略中间文字，用。。。代替。自定义添加了<KeyTag>3个api</KeyTag>
+          <DIV>1、suffixCount：末尾留的字符长度，默认为12</DIV>
+          <DIV>2、isShow：是否展示提示，默认为false</DIV>
+          <DIV>3、label：文字内容，<KeyTag>必填</KeyTag></DIV>
+        </DIV>
       </DIV>
     </DescribeP>
   )
+  const content = 'Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team.'
 
   return (
     <>
@@ -26,13 +32,17 @@ const Typography: React.FC = () => {
       <UseIntroduce describe={describe} />
 
       <Divider plain>展开/收起</Divider>
-      <ShowOrClose />
+      <ShowOrClose label={content} rows={2} />
 
       <Divider plain>省略中间文字</Divider>
-      <EllipsisMiddle suffixCount={5} label='Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team.' />
-      <br />
-      <br />
-      <EllipsisMiddle isShow suffixCount={24} label='Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team.' />
+      <EllipsisMiddle suffixCount={5} label={content} />
+      <Space />
+      <EllipsisMiddle isShow suffixCount={24} label={content} />
+
+      {/* 展开/收起 下面的对话框（回复） */}
+      <Divider plain>展开/收起 下面的对话框（回复）</Divider>
+      <DialogMessage />
+
     </>
   );
 }

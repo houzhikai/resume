@@ -3,7 +3,7 @@ import { Breadcrumb } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
 
 
-const CustomBreadcrumb = (props: { arr: string[], href: string }) => {
+const CustomBreadcrumb = (props: { arr: string[], href?: string }) => {
   const location = useLocation()
   const { arr, href } = props
   return (
