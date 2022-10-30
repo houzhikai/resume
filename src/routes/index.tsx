@@ -9,7 +9,6 @@ import Rolling from '../views/PublicView/Rolling/Rolling'
 import Typography from '../views/PublicView/Typography'
 import FormLayout from "../views/FormView/FormTab";
 import FormAddSubtractFields from "../views/FormView/FormAddSubtractFields";
-import AboutUs from "../views/About/AboutUs";
 import BaseTab from "../views/Table/BaseTab";
 import SearchTable from "../views/Table/SearchTable/SearchTable";
 import FormCalculate from "../views/FormView/FormCalculate";
@@ -17,6 +16,8 @@ import FormStepView from "../views/FormView/FormStep";
 import FormBaseView from "../views/FormView/FormBaseView";
 import TransformZoom from '../views/Transform/TransformZoom/TransformZoom'
 import TransformRotate from '../views/Transform/TransformRotate/TransformRotate'
+import Notes from '../views/Components/Notes'
+import AboutUs from "../views/About/AboutUs";
 
 
 const routes: any = [
@@ -38,6 +39,7 @@ const routes: any = [
   { path: '/tabs/searchTable', exact: true, name: '搜索表单', component: SearchTable, auth: [1] },
   { path: '/transform/zoom', exact: true, name: '缩放', component: TransformZoom, auth: [1] },
   { path: '/transform/rotate', exact: true, name: '旋转', component: TransformRotate, auth: [1] },
+  { path: '/component/notes', exact: true, name: '笔记', component: Notes, auth: [1] },
   { path: '/about', exact: true, name: '关于我们', component: AboutUs, auth: [1] },
 ];
 

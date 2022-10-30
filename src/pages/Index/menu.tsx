@@ -55,6 +55,15 @@ const menu = [
         ]
     },
     {
+        title: '组件库',
+        key: '/component',
+        icon: 'icon-yuanshuju-zujianku',
+        auth: [1],
+        subs: [
+            { title: '笔记', key: '/component/notes', icon: '' },
+        ]
+    },
+    {
         title: '关于我们',
         key: '/about',
         icon: 'icon-guanyuwomen',
