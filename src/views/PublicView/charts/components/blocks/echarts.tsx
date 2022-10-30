@@ -19,6 +19,7 @@ const Echarts = (props: PropsType) => {
       tooltip: {
         trigger: 'item'
       },
+      color: ages.map((item: { color: string }) => item.color),
       series: [
         {
           name: 'Access From',
