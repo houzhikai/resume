@@ -28,8 +28,7 @@ const ReplyText = styled.span`
 `
 
 const DialogMessage = () => {
-  const [visible, setVisible] = useState<boolean>(false)   // 默认不展示回复信息
-
+  const [openList, setOpenList] = useState<number[]>([]);
   const messageList = [
     {
       name: 'name1',
@@ -39,6 +38,7 @@ const DialogMessage = () => {
       reply: [
         {
           name: 'reply1',
+          id: 11,
           text: '回复你一句话1111'
         }
       ]
@@ -51,10 +51,12 @@ const DialogMessage = () => {
       reply: [
         {
           name: 'reply1',
+          id: 12,
           text: '回复你一句话1111'
         },
         {
           name: 'reply2',
+          id: 13,
           text: '回复你一句话1111'
         }
       ]
@@ -67,13 +69,16 @@ const DialogMessage = () => {
       reply: [
         {
           name: 'reply1',
+          id: 4,
           text: '回复你一句话1111'
         },
         {
           name: 'reply2',
+          id: 5,
           text: '回复你一句话1111'
         }, {
           name: 'reply3',
+          id: 6,
           text: '回复你一句话2222'
         }
       ]
@@ -86,10 +91,12 @@ const DialogMessage = () => {
       reply: [
         {
           name: 'reply1',
+          id: 7,
           text: '回复你一句话1111'
         },
         {
           name: 'reply2',
+          id: 8,
           text: '回复你一句话1111'
         }
       ]
@@ -102,17 +109,22 @@ const DialogMessage = () => {
       reply: []
     }
   ]
-  const handleClick = (index: number) => {
-    console.log('index', index)
-    setVisible(!visible)
+  const handleClick = (id: number) => {
+    if (openList.includes(id)) {
+      const val = openList.filter((p: number) => p !== id)
+      setOpenList(val)
+    } else {
+      setOpenList(oldId => [...oldId, id])
+    }
   }
+  console.log('openList', openList)
+
   return (
     <>
-      {messageList.map((item, idx, record) => {
+      {messageList.map(item => {
         const replyLength = item.reply.length
         return (
           <div key={item.name}>
-            {`visible:  ${visible} `}
             <Wrapper>
               <Author >{item.name}:</Author>
               <div>{item.text}</div>
@@ -120,12 +132,12 @@ const DialogMessage = () => {
             {/* 展开/收起条回复 */}
             <ReplyText>
               {
-                !visible && replyLength > 0 ? (
-                  <Button type='link' icon={<CaretDownOutlined />} onClick={() => handleClick(idx)}>
+                !openList.includes(item.id) && replyLength > 0 ? (
+                  <Button type='link' icon={<CaretDownOutlined />} onClick={() => handleClick(item.id)}>
                     {`展开${replyLength}条回复`}
                   </Button>
                 ) : (replyLength === 0 ? null :
-                  <Button type='link' icon={<CaretUpOutlined />} onClick={() => handleClick(idx)}>
+                  <Button type='link' icon={<CaretUpOutlined />} onClick={() => handleClick(item.id)}>
                     {`关闭${replyLength}条回复`}
                   </Button>
                 )
@@ -133,9 +145,9 @@ const DialogMessage = () => {
             </ReplyText>
             {/* 回复对话框 */}
             {
-              visible && item.reply?.map(p => {
+              openList.includes(item.id) && item.reply?.map(p => {
                 return (
-                  <Wrapper key={p.name}>
+                  <Wrapper key={`${item.id}-${p.id}`}>
                     <Replier>{p.name}:</Replier>
                     <div>{p.text}</div>
                   </Wrapper>

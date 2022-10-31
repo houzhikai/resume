@@ -32,6 +32,7 @@ const CodeWrapper = styled.div`
   display: flex;
 `
 const Login = () => {
+  const [user, setUser] = useState({ username: 'admin', password: '123456' });
   const [checkValue, setCheckValue] = useState(false);
   // 密码登录为 true，验证码为false
   const [loginWay, setLoginWay] = useState(true)
@@ -54,14 +55,36 @@ const Login = () => {
     }
   }, [time, isLoading])
 
+  const users = [
+    { //login 权限
+      username: 'login',
+      password: '123456',
+      login: true
+    },
+    {  //角色 权限
+      username: 'role',
+      password: '123456',
+      login: false
+    },
+    {  //content 权限
+      username: 'admin',
+      password: '123456',
+      login: false
+    },
+  ]
 
-
-  const onFinish = (values: { username: string, password: string; }) => {
-    if (values.username !== 'admin' || values.password !== '123456') {
+  const onFinish = (values: { username: string, password: string; login: boolean }) => {
+    const isUser = (values.username === 'admin' && values.password === '123456') || (values.username === 'login' && values.password === '123456') || (values.username === 'content' && values.password === '123456')
+    if (isUser) {
+      const loginUser: any = users.filter(item => item.username === values.username)
+      setUser(loginUser)
+      message.success('登录成功！')
+      history.push('./home');
+    } else {
       message.error('用户名或密码输入错误！');
-      return false;
+      return false
     }
-    history.push('./home');
+
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -92,7 +115,7 @@ const Login = () => {
           name="basic"
           labelCol={{ span: 6 }}
           wrapperCol={{ span: 16 }}
-          initialValues={{ remember: true, username: 'admin', password: '123456' }}
+          initialValues={{ remember: true, ...user }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
           autoComplete="off"

@@ -1,10 +1,22 @@
-import React from 'react';
+import { Typography } from 'antd';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-function Notes() {
+const { Paragraph } = Typography;
+const Wrapper = styled.div`
+  margin: 20px;
+`
+
+const Notes = () => {
+  const [editableStr, setEditableStr] = useState('笔记');
   return (
-    <div>
-      Component
-    </div>
+    <Wrapper>
+      <h1>
+        <Paragraph editable={{ onChange: setEditableStr }}>
+          {editableStr}
+        </Paragraph>
+      </h1>
+    </Wrapper>
   );
 }
 
