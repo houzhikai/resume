@@ -6,6 +6,7 @@ import UseIntroduce from '../../../components/UseIntroduce';
 import ShowOrClose from './ShowOrClose';
 import EllipsisMiddle from './EllipsisMiddle';
 import DialogMessage from './DialogMessage';
+import TextCarousel from './TextCarousel/index';
 
 const Typography: React.FC = () => {
   const describe = (
@@ -21,15 +22,23 @@ const Typography: React.FC = () => {
           <DIV>2、isShow：是否展示提示，默认为false</DIV>
           <DIV>3、label：文字内容，<KeyTag>必填</KeyTag></DIV>
         </DIV>
+        <DIV>三、文字跑马灯，<KeyTag>鼠标浮上去文字暂停</KeyTag>
+          <DIV>1、content: <KeyTag>内容，默认为空</KeyTag></DIV>
+          <DIV>2、duration: <KeyTag>滚动持续时长，默认值为3</KeyTag></DIV>
+        </DIV>
       </DIV>
     </DescribeP>
   )
   const content = 'Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team.'
 
+  const adSpace = '我是一条广告，但是我是一直无限循环的'
   return (
     <>
       <CustomBreadcrumb arr={['通用', '文字排版']} />
       <UseIntroduce describe={describe} />
+
+      <Divider plain>文字横向移动（跑马灯）</Divider>
+      <TextCarousel content={adSpace} />
 
       <Divider plain>展开/收起</Divider>
       <ShowOrClose label={content} rows={2} />
@@ -42,7 +51,6 @@ const Typography: React.FC = () => {
       {/* 展开/收起 下面的对话框（回复） */}
       <Divider plain>展开/收起 下面的对话框（回复）</Divider>
       <DialogMessage />
-
     </>
   );
 }

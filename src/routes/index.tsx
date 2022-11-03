@@ -31,10 +31,12 @@ const routes: any = [
     }
   },
   {
-    path: '/public/myCopy', exact: true, name: '复制', component: CustomerButton, auth: [1], meta: {
-      login
-        : true, content: true, role: true
-    }
+    path: '/public/myCopy',
+    exact: true,
+    name: '复制',
+    component: CustomerButton,
+    auth: [1],
+    meta: { login: true, content: true, role: true }
   },
   {
     path: '/public/upload', exact: true, name: '上传', component: UploadView, auth: [1], meta: {

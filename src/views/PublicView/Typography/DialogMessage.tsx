@@ -29,6 +29,7 @@ const ReplyText = styled.span`
 
 const DialogMessage = () => {
   const [openList, setOpenList] = useState<number[]>([]);
+
   const messageList = [
     {
       name: 'name1',
@@ -117,7 +118,6 @@ const DialogMessage = () => {
       setOpenList(oldId => [...oldId, id])
     }
   }
-  console.log('openList', openList)
 
   return (
     <>
