@@ -7,6 +7,7 @@ import ShowOrClose from './ShowOrClose';
 import EllipsisMiddle from './EllipsisMiddle';
 import DialogMessage from './DialogMessage';
 import TextCarousel from './TextCarousel/index';
+import TextUpDown from './TextUpDown';
 
 const Typography: React.FC = () => {
   const describe = (
@@ -32,6 +33,34 @@ const Typography: React.FC = () => {
   const content = 'Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team.'
 
   const adSpace = '我是一条广告，但是我是一直无限循环的'
+
+  const dataList = [
+    {
+      id: '0',
+      title: '我是广告一号',
+    },
+    {
+      id: '2',
+      title: '我是广告二号',
+    },
+    {
+      id: '3',
+      title: '我是广告三号',
+    },
+    {
+      id: '4',
+      title: '我是广告四号',
+    },
+    {
+      id: '5',
+      title: '我是广告五号',
+    },
+    {
+      id: '6',
+      title: '我是广告六号',
+    }
+  ];
+
   return (
     <>
       <CustomBreadcrumb arr={['通用', '文字排版']} />
@@ -39,6 +68,9 @@ const Typography: React.FC = () => {
 
       <Divider plain>文字横向移动（跑马灯）</Divider>
       <TextCarousel content={adSpace} />
+
+      <Divider plain>文字上下滚动</Divider>
+      <TextUpDown list={dataList} />
 
       <Divider plain>展开/收起</Divider>
       <ShowOrClose label={content} rows={2} />

@@ -26,7 +26,6 @@ function TextScroll(props: TextScrollProps) {
   }, [])
   const { contentWidth, left, duration: timing } = state
   const animationName = `marquee_${contentWidth}`
-  console.log('left', left)
   const Text = styled.p`
     padding: 10px;
     position: relative;
