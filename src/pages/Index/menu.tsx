@@ -11,7 +11,7 @@ const menu = [
         icon: 'icon-appstore',
         auth: [1],
         subs: [
-            { title: '按钮', key: '/public/button', icon: '' },
+            // { title: '按钮', key: '/public/button', icon: '' },
             { title: '复制', key: '/public/myCopy', icon: '' },
             { title: '上传', key: '/public/upload', icon: '' },
             { title: '弹幕', key: '/public/barrage', icon: '' },

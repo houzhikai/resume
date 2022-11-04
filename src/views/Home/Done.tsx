@@ -30,7 +30,7 @@ const Done = () => {
       expandIconPosition='right'
       className="site-collapse-custom-collapse"
     >
-      <Panel header={<h3>暂时完成的组件为</h3>} key="1" className='base-style'>
+      <Panel header={<h3>暂时完成的组件为<span style={{ color: 'red' }}>(支持点击跳转)</span></h3>} key="1" className='base-style'>
         {
           data.map((item: { name: string[], path: string }) => {
             return (

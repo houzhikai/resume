@@ -1,5 +1,4 @@
 import Home from "../views/Home";
-import ButtonView from "../views/PublicView/Button/ButtonView";
 import CustomerButton from '../views/PublicView/Button/customButton';
 import UploadView from "../views/PublicView/Upload";
 import Barrage from '../views/PublicView/barrage/barrage'
@@ -25,11 +24,11 @@ const routes: any = [
   {
     path: '/home', exact: true, name: '首页', component: Home, auth: [1], meta: { login: true, content: true, role: true }
   },
-  {
-    path: '/public/button', exact: true, name: '按钮', component: ButtonView, auth: [1], meta: {
-      login: true, content: true, role: true
-    }
-  },
+  // {
+  //   path: '/public/button', exact: true, name: '按钮', component: ButtonView, auth: [1], meta: {
+  //     login: true, content: true, role: true
+  //   }
+  // },
   {
     path: '/public/myCopy',
     exact: true,
