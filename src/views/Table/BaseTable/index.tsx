@@ -1,101 +1,15 @@
 import React from 'react';
 import { Table, Space, Tag, Popconfirm, Typography, message } from 'antd';
-import CustomBreadcrumb from '../../components/CustomBreadcrumb';
-import UseIntroduce from '../../components/UseIntroduce';
-import { DIV } from '../../components/Div';
-import { KeyTag } from '../../components/Div';
-
+import CustomBreadcrumb from '../../../components/CustomBreadcrumb';
+import UseIntroduce from '../../../components/UseIntroduce';
+import { DIV } from '../../../components/Div';
+import { KeyTag } from '../../../components/Div';
+import { dataSource } from './dataSource';
+import './index.scss'
 
 const BaseTab = () => {
-  const dataSource = [
-    {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-      tags: ['nice', 'developer'],
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-      tags: ['loser', 'warning'],
-    },
-    {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    {
-      key: '4',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    {
-      key: '5',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    {
-      key: '6',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    {
-      key: '7',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    {
-      key: '8',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    {
-      key: '9',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    {
-      key: '10',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    {
-      key: '11',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    {
-      key: '12',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-  ];
 
   const handleDelete = (key: string) => {
-    console.log('点击删除', dataSource, key);
     return dataSource.filter(item => item.key !== key);
   };
   const columns = [
@@ -103,6 +17,8 @@ const BaseTab = () => {
       title: '名字',
       dataIndex: 'name',
       key: 'name',
+      render: (value: string, record: any) =>
+        <div className={record.sex}>{value}</div>
     },
     {
       title: '年龄',

@@ -8,7 +8,7 @@ import Rolling from '../views/PublicView/Rolling/Rolling'
 import Typography from '../views/PublicView/Typography'
 import FormLayout from "../views/FormView/FormTab";
 import FormAddSubtractFields from "../views/FormView/FormAddSubtractFields";
-import BaseTab from "../views/Table/BaseTab";
+import BaseTab from "../views/Table/BaseTable";
 import SearchTable from "../views/Table/SearchTable/SearchTable";
 import FormCalculate from "../views/FormView/FormCalculate";
 import FormStepView from "../views/FormView/FormStep";

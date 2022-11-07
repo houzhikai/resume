@@ -1,0 +1,38 @@
+.man{
+  position: relative;
+  line-height: 34px;
+  &::after{
+    content: '男';
+    position: absolute;
+    top: 26px;
+    left: 10px;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(56, 158, 85);
+    color:  rgb(56, 158, 85);
+    opacity: 0.7;
+  }
+}
+.woman{
+  position: relative;
+  line-height: 34px;
+  &::after{
+    content: '女';
+    position: absolute;
+    top: 26px;
+    left: 10px;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid  rgb(224, 32, 32);
+    color:  rgb(224, 32, 32);
+    opacity: 0.7;
+  }
+}
