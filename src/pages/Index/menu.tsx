@@ -64,6 +64,15 @@ const menu = [
         ]
     },
     {
+        title: '练习',
+        key: '/practice',
+        icon: 'icon-lianxi',
+        auth: [1],
+        subs: [
+            { title: '编辑器', key: '/practice/editor', icon: '' },
+        ]
+    },
+    {
         title: '关于我们',
         key: '/about',
         icon: 'icon-guanyuwomen',

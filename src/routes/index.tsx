@@ -16,6 +16,7 @@ import FormBaseView from "../views/FormView/FormBaseView";
 import TransformZoom from '../views/Transform/TransformZoom/TransformZoom'
 import TransformRotate from '../views/Transform/TransformRotate/TransformRotate'
 import Notes from '../views/Components/Notes'
+import Editor from '../views/Practice/Editor'
 import AboutUs from "../views/About/AboutUs";
 
 // auth 权限管理，只要存在页面内容可以存在
@@ -114,6 +115,11 @@ const routes: any = [
   },
   {
     path: '/component/notes', exact: true, name: '笔记', component: Notes, auth: [1], meta: {
+      login: true, content: true, role: true
+    }
+  },
+  {
+    path: '/practice/editor', exact: true, name: '编辑器', component: Editor, auth: [1], meta: {
       login: true, content: true, role: true
     }
   },
