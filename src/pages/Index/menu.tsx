@@ -60,7 +60,7 @@ const menu = [
         icon: 'icon-yuanshuju-zujianku',
         auth: [1],
         subs: [
-            { title: '笔记', key: '/components/notes', icon: '' },
+            { title: '选择', key: '/components/select', icon: '' },
             { title: '次级选择', key: '/components/cascader', icon: '' },
         ]
     },

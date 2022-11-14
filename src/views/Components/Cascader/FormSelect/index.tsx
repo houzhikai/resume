@@ -1,6 +1,6 @@
 import { Form, Select } from 'antd'
 import { dataList } from '../dataList'
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 const Option = Select
 

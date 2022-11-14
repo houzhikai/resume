@@ -15,7 +15,7 @@ import FormStepView from "../views/FormView/FormStep";
 import FormBaseView from "../views/FormView/FormBaseView";
 import TransformZoom from '../views/Transform/TransformZoom/TransformZoom'
 import TransformRotate from '../views/Transform/TransformRotate/TransformRotate'
-import Notes from '../views/Components/Notes/index'
+import Select from '../views/Components/Select/index'
 import Cascader from '../views/Components/Cascader'
 import Editor from '../views/Practice/Editor'
 import AboutUs from "../views/About/AboutUs";
@@ -115,7 +115,7 @@ const routes: any = [
     }
   },
   {
-    path: '/components/notes', exact: true, name: '笔记', component: Notes, auth: [1], meta: {
+    path: '/components/select', exact: true, name: '选择', component: Select, auth: [1], meta: {
       login: true, content: true, role: true
     }
   },
