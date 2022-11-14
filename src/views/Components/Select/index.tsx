@@ -8,7 +8,7 @@ import Select1 from './blocks/Select1';
 
 const SelectDisable = () => {
   const describe = <div>
-    <DescribeP>基于 antd组件 <Typography.Link href='https://ant.design/components/select-cn/' target="_blank"><KeyTag>Select<IconFont type="icon-sousuo" /></KeyTag></Typography.Link> 组件的二次开发，添加新的功能：</DescribeP>
+    <DescribeP>基于 antd组件 <Typography.Link href='https://ant.design/components/select-cn/' target="_blank"><KeyTag>Select<IconFont type="icon-sousuo" /></KeyTag></Typography.Link> 组件的二次开发，默认<KeyTag>width: 200px</KeyTag>添加新的功能：</DescribeP>
     <DIV>1）新增<KeyTag>选中后自动置灰</KeyTag>的功能，支持多选目的是不能多次点击相同的option</DIV>
 
   </div>;

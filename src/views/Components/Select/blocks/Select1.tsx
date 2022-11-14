@@ -1,4 +1,5 @@
 import { Divider, Select } from 'antd';
+import React from 'react';
 import { dataList } from '../dataList'
 
 interface SelectProps {
@@ -12,9 +13,9 @@ interface newListProps {
 const Select1 = (props: SelectProps) => {
   const { width } = props
   let newList: newListProps[] = []
-  // 选择 options
+  // 选择
   const handleChange = (value: string[]) => {
-    dataList.map((item: any) => {
+    dataList.map((item: newListProps) => {
       value.map(p => {
         if (item.value === p) {
           newList.push(item)
@@ -30,7 +31,7 @@ const Select1 = (props: SelectProps) => {
       if (item.disabled) {
         item.disabled = false
       }
-      return newList
+      return newList = []
     })
   }
   return (
