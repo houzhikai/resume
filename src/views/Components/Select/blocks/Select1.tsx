@@ -3,7 +3,9 @@ import React from 'react';
 import { dataList } from '../dataList'
 
 interface SelectProps {
-  width?: number
+  width?: number,
+  maxTagCount?: number,
+  isAllowClear?: boolean,
 }
 interface newListProps {
   value: string,
@@ -11,11 +13,12 @@ interface newListProps {
   disabled?: boolean
 }
 const Select1 = (props: SelectProps) => {
-  const { width } = props
+  const { width, maxTagCount, isAllowClear } = props
   let newList: newListProps[] = []
+  const _dataList = JSON.parse(JSON.stringify(dataList))
   // 选择
   const handleChange = (value: string[]) => {
-    dataList.map((item: newListProps) => {
+    _dataList.map((item: newListProps) => {
       value.map(p => {
         if (item.value === p) {
           newList.push(item)
@@ -36,18 +39,20 @@ const Select1 = (props: SelectProps) => {
   }
   return (
     <>
-      <Divider plain>多选</Divider>
+      <Divider plain>多选后置灰(多选)</Divider>
       <span>select1:   </span>
       <Select
         mode='multiple'
         style={{ width: width || 300 }}
         placeholder='请选择'
-        allowClear
-        options={dataList}
+        allowClear={isAllowClear ? true : false}
+        options={_dataList}
         showSearch
         showArrow={true}
         onChange={handleChange}
         onClear={handleClear}
+        maxTagCount={maxTagCount ?? undefined}
+        maxTagPlaceholder={c => <>{`+${c.length}`}</>}
       />
     </>
   );
