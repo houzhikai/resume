@@ -56,11 +56,12 @@ const menu = [
     },
     {
         title: '组件库',
-        key: '/component',
+        key: '/components',
         icon: 'icon-yuanshuju-zujianku',
         auth: [1],
         subs: [
-            { title: '笔记', key: '/component/notes', icon: '' },
+            { title: '笔记', key: '/components/notes', icon: '' },
+            { title: '次级选择', key: '/components/cascader', icon: '' },
         ]
     },
     {
