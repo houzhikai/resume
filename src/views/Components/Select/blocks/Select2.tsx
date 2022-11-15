@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import type { SelectProps } from 'antd';
 import { dataList } from '../dataList';
 
-
-
 interface Select2Props {
   width?: number
   maxTagCount?: number
