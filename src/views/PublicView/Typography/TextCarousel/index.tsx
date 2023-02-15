@@ -1,31 +1,31 @@
-import React, { useRef, useEffect, useState } from 'react'
-import './index.scss'
-import styled from 'styled-components'
+import React, { useRef, useEffect, useState } from "react";
+import "./index.scss";
+import styled from "styled-components";
 
 interface TextScrollProps {
-  content?: string // 内容
-  duration?: number // 持续时间/s
+  content?: string; // 内容
+  duration?: number; // 持续时间/s
 }
 
 function TextScroll(props: TextScrollProps) {
-  const { content, duration } = props
+  const { content, duration } = props;
   const defaultState = {
     contentWidth: 0,
     left: 0,
     duration: duration || 3,
-  }
-  const [state, setState] = useState(defaultState)
-  let ref = useRef<HTMLParagraphElement>(null)
+  };
+  const [state, setState] = useState(defaultState);
+  let ref = useRef<HTMLParagraphElement>(null);
   useEffect(() => {
-    const { offsetWidth, parentElement } = ref.current as HTMLParagraphElement
+    const { offsetWidth, parentElement } = ref.current as HTMLParagraphElement;
     setState({
       ...state,
       contentWidth: offsetWidth,
       left: parentElement!.offsetWidth,
-    })
-  }, [])
-  const { contentWidth, left, duration: timing } = state
-  const animationName = `marquee_${contentWidth}`
+    });
+  }, [state]);
+  const { contentWidth, left, duration: timing } = state;
+  const animationName = `marquee_${contentWidth}`;
   const Text = styled.p`
     padding: 10px;
     position: relative;
@@ -42,12 +42,12 @@ function TextScroll(props: TextScrollProps) {
         transform: translateX(-${contentWidth + left}px);
       }
     }
-  `
+  `;
   return (
     <div className="marquee_box">
-      <Text ref={ref}>{content || ''}</Text>
+      <Text ref={ref}>{content || ""}</Text>
     </div>
-  )
+  );
 }
 
-export default React.memo(TextScroll)
+export default React.memo(TextScroll);
