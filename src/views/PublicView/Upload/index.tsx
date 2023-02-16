@@ -58,6 +58,12 @@ const UploadView = () => {
 
       <Divider plain>测试upload读存文件</Divider>
       <TestUpload />
+      <Divider plain>测试iframe</Divider>
+      <iframe src="http://localhost:3000/#/home" width="100%" height="500">
+        <p>
+          <a href="https://www.example.com">点击打开嵌入页面</a>
+        </p>
+      </iframe>
     </>
   );
 };

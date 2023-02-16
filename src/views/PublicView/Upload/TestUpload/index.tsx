@@ -8,6 +8,7 @@ const { TextArea } = Input;
 const TestUpload = () => {
   let [value, setValue] = useState<any>("");
   let [filename, setFilename] = useState<any>("");
+
   const props: UploadProps = {
     showUploadList: false,
     beforeUpload: (file) => {
