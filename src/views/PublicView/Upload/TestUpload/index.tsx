@@ -12,7 +12,6 @@ const TestUpload = () => {
     showUploadList: false,
     beforeUpload: (file) => {
       const reader = new FileReader(); //创建文件对象
-      console.log(11, file);
       setFilename(() => file.name);
       reader.readAsText(file); //读取文件的内容/URL
       reader.onload = function () {
