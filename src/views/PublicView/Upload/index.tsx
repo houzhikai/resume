@@ -5,10 +5,11 @@ import { KeyTag, FormWrapper, DescribeP } from "../../../components/Div";
 import { Button, Form, Upload, message, Divider } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import TestUpload from "./TestUpload";
+import RequireFile from "./RequireFile";
+// import * as file from "../../../files/testFile.txt";
 
 const UploadView = () => {
   const [fileList] = useState([]);
-
   const props = {
     beforeUpload: (file: any) => {
       console.log("file", file);
@@ -30,6 +31,7 @@ const UploadView = () => {
       </DescribeP>
     </div>
   );
+
   return (
     <>
       <CustomBreadcrumb arr={["通用", "上传"]} />
@@ -58,8 +60,12 @@ const UploadView = () => {
 
       <Divider plain>测试upload读存文件</Divider>
       <TestUpload />
+
+      <Divider plain>测试引入JSON文件</Divider>
+      <RequireFile />
+
       <Divider plain>测试iframe</Divider>
-      <iframe src="http://localhost:3000/#/home" width="100%" height="500">
+      <iframe src="www.baidu.com" width="100%" height="500">
         <p>
           <a href="https://www.example.com">点击打开嵌入页面</a>
         </p>
