@@ -4,14 +4,14 @@ import { useState } from "react";
 const { TextArea } = Input;
 
 const Datalog = () => {
-  const [value, setValue] = useState("");
+  let configFile = JSON.stringify(
+    require("../../../../assets/PatternList.json")
+  );
+  const [value, setValue] = useState(configFile);
 
-  const handleClick = () => {
-    const configFile = require("../../../../assets/PatternList.json");
-    setValue(() => JSON.stringify(configFile));
-  };
   const handleSave = () => {
-    console.log("保存文件");
+    configFile = value;
+    console.log({ value, configFile });
   };
   const handleChange = (e: any) => {
     setValue(() => e.target.value);
@@ -21,13 +21,10 @@ const Datalog = () => {
       <div
         style={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "end",
           margin: 20,
         }}
       >
-        <Button type="primary" onClick={handleClick}>
-          Datalog页面
-        </Button>
         <Button type="primary" danger onClick={handleSave}>
           保存
         </Button>

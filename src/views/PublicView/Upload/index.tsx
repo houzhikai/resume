@@ -65,7 +65,12 @@ const UploadView = () => {
       <RequireFile />
 
       <Divider plain>测试iframe</Divider>
-      <iframe src="www.baidu.com" width="100%" height="500">
+      <iframe
+        src="../../../../build/index.html"
+        width="100%"
+        height="500"
+        title="test"
+      >
         <p>
           <a href="https://www.example.com">点击打开嵌入页面</a>
         </p>
