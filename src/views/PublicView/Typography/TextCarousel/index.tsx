@@ -23,7 +23,7 @@ function TextScroll(props: TextScrollProps) {
       contentWidth: offsetWidth,
       left: parentElement!.offsetWidth,
     })
-  }, [])
+  }, [state])
   const { contentWidth, left, duration: timing } = state
   const animationName = `marquee_${contentWidth}`
   const Text = styled.p`

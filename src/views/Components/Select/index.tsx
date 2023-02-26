@@ -6,6 +6,7 @@ import UseIntroduce from '../../../components/UseIntroduce';
 import Select1 from './blocks/Select1';
 import Select2 from './blocks/Select2';
 import Select3 from './blocks/Select3';
+import Search1 from './blocks/Search1';
 
 
 const SelectDisable = () => {
@@ -21,6 +22,8 @@ const SelectDisable = () => {
     <>
       <CustomBreadcrumb arr={['组件库', '选择后置灰']} />
       <UseIntroduce describe={describe} />
+      {/* search 组件 */}
+      <Search1 />
       {/* 多选后置灰 */}
       <Select1 />
       {/* 选中后合并为一段文字 */}

@@ -112,6 +112,7 @@ const demo = () => {
     },
 
   ]
+  const a = Math.floor(Math.random() * 10)
   return (
     <div className="title">
       {word.map(item => {
@@ -126,6 +127,7 @@ const demo = () => {
           </div>
         )
       })}
+      <div>这是一个随机数:{a}</div>
     </div>
   )
 }
