@@ -79,7 +79,7 @@ const Login = () => {
       const loginUser: any = users.filter(item => item.username === values.username)
       setUser(loginUser)
       message.success('登录成功！')
-      // history.push('./home');
+      history.push('./home');
       // 在 url 上添加参数
       // history.push({ pathname: '/home', search: 'name=123' })p
     } else {
