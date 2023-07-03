@@ -2,7 +2,7 @@ import Home from "../views/Home";
 import CustomerButton from '../views/PublicView/Button/customButton';
 import UploadView from "../views/PublicView/Upload";
 import Barrage from '../views/PublicView/barrage/barrage'
-import Interactive from '../views/PublicView/interactive/interactive'
+import Interactive from '../views/PublicView/interactive'
 import Charts from '../views/PublicView/charts'
 import Rolling from '../views/PublicView/Rolling/Rolling'
 import Typography from '../views/PublicView/Typography'

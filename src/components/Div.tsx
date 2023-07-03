@@ -22,4 +22,11 @@ export const DescribeP = styled.div`
 export const Space = styled.div`
   height: 30px;
 `
-
+export const Title = styled.div`
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  font-weight: 700;
+  padding-left: 20px;
+  border-bottom: 1px solid #ccc;
+`
