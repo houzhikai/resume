@@ -19,7 +19,6 @@
 //   // return clearInterval(timer)
 //   //   },[value])
 
-
 //   // const temp = 1
 //   // useEffect(() => {
 //   //   console.log('------------------')
@@ -50,8 +49,6 @@
 // }
 // export default useToggle
 
-
-
 // async function demo(value, delay) {
 //   return new Promise(resolve => {
 //     setTimeout(() => {
@@ -66,69 +63,46 @@
 // }
 // demo1()
 
-import './test.scss'
+import "./test.scss";
 const demo = () => {
   const word = [
     {
-      title: '弹性计算',
-      product: [
-        '弹性计算',
-        '弹性裸金属服务器',
-        '22',
-        '33'
-      ]
+      title: "弹性计算",
+      product: ["弹性计算", "弹性裸金属服务器", "22", "33"],
     },
     {
-      title: '域名与网站（万网）',
-      product: [
-        '11',
-        '22',
-        '33'
-      ]
+      title: "域名与网站（万网）",
+      product: ["11", "22", "33"],
     },
     {
-      title: '互联网中间件',
-      product: [
-        '11',
-        '22',
-        '33'
-      ]
+      title: "互联网中间件",
+      product: ["11", "22", "33"],
     },
     {
-      title: '开发者工具',
-      product: [
-        '11',
-        '22',
-        '33'
-      ]
+      title: "开发者工具",
+      product: ["11", "22", "33"],
     },
     {
-      title: '开发者工具',
-      product: [
-        '11',
-        '22',
-        '33'
-      ]
+      title: "开发者工具",
+      product: ["11", "22", "33"],
     },
-
-  ]
-  const a = Math.floor(Math.random() * 10)
+  ];
+  const a = Math.floor(Math.random() * 10);
   return (
     <div className="title">
-      {word.map(item => {
+      {word.map((item) => {
         return (
           <div key={item.title}>
             <div key={item.title}>{item.title}</div>
-            {
-              item.product.map(p => {
-                return <div key={p}>{p}</div>
-              })
-            }
+            {item.product.map((p) => {
+              return <div key={p}>{p}</div>;
+            })}
           </div>
-        )
+        );
       })}
       <div>这是一个随机数:{a}</div>
+      {/* <Row></Row> */}
     </div>
-  )
-}
-export default demo
+  );
+};
+export default demo;
