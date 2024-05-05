@@ -19,6 +19,7 @@ const menu = [
       { title: "图表", key: "/public/charts", icon: "" },
       { title: "滚动", key: "/public/rolling", icon: "" },
       { title: "排版", key: "/public/typography", icon: "" },
+      { title: "拖动的弹窗", key: "/public/dropModal", icon: "" },
     ],
   },
   {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "antd/dist/antd.css";
+// import "antd/dist/antd.css";
 import { Form, Input, Button, Radio, message } from "antd";
-import CustomBreadcrumb from '../../components/CustomBreadcrumb';
+import CustomBreadcrumb from "../../components/CustomBreadcrumb";
 import UseIntroduce from "../../components/UseIntroduce";
 
 const FormLayout = () => {
@@ -14,13 +14,13 @@ const FormLayout = () => {
       layout: formLayout ?? "horizontal",
       inputA: "",
       inputB: "",
-      ignore: true
+      ignore: true,
     });
   }, [formLayout, form]);
 
   const formItemLayout = {
     labelCol: { span: 4 },
-    wrapperCol: { span: 14 }
+    wrapperCol: { span: 14 },
   };
 
   const handleFinishForm = (e: any) => {
@@ -28,24 +28,24 @@ const FormLayout = () => {
       layout: e.layout,
       inputA: e.inputA,
       inputB: e.inputB,
-      ignore: e.ignore
+      ignore: e.ignore,
     };
-    console.log('params', params);
-    message.info('提交成功');
+    console.log("params", params);
+    message.info("提交成功");
   };
   return (
     <>
-      <CustomBreadcrumb arr={['表单', 'FORM切换']} />
+      <CustomBreadcrumb arr={["表单", "FORM切换"]} />
       <UseIntroduce
-        describe='该表单记录了多个 tabs 共用了同一个输入框、单选框 ， 当切换 tabs 时，输入框和单选框可以自动清空里面所选的数据，
-          确认按钮已经填写完整，接入了接口参数 params 中，后续可以直接使用。'
+        describe="该表单记录了多个 tabs 共用了同一个输入框、单选框 ， 当切换 tabs 时，输入框和单选框可以自动清空里面所选的数据，
+          确认按钮已经填写完整，接入了接口参数 params 中，后续可以直接使用。"
       />
       <Form
-        style={{ background: 'white', padding: 20 }}
+        style={{ background: "white", padding: 20 }}
         {...formItemLayout}
         form={form}
         initialValues={{
-          layout: formLayout
+          layout: formLayout,
         }}
         onFinish={handleFinishForm}
       >
@@ -60,14 +60,9 @@ const FormLayout = () => {
           </Radio.Group>
         </Form.Item>
         <Form.Item label="Field A" name="inputA">
-          <Input
-            placeholder="input placeholder"
-          />
+          <Input placeholder="input placeholder" />
         </Form.Item>
-        <Form.Item
-          label="Field B"
-          name="inputB"
-        >
+        <Form.Item label="Field B" name="inputB">
           <Input placeholder="input placeholder" />
         </Form.Item>
         <Form.Item label="Field C" name="ignore">

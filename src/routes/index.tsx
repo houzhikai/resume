@@ -6,6 +6,7 @@ import Interactive from "../views/PublicView/interactive";
 import Charts from "../views/PublicView/charts";
 import Rolling from "../views/PublicView/Rolling/Rolling";
 import Typography from "../views/PublicView/Typography";
+import DropModal from "../views/PublicView/DropModal";
 import FormLayout from "../views/FormView/FormTab";
 import FormAddSubtractFields from "../views/FormView/FormAddSubtractFields";
 import BaseTab from "../views/Table/BaseTable";
@@ -110,6 +111,18 @@ const routes: any = [
     exact: true,
     name: "排版",
     component: Typography,
+    auth: [1],
+    meta: {
+      login: true,
+      content: true,
+      role: true,
+    },
+  },
+  {
+    path: "/public/dropModal",
+    exact: true,
+    name: "拖动的弹窗",
+    component: DropModal,
     auth: [1],
     meta: {
       login: true,
